@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found | Talksign</title>
+<meta name="description" content="We couldn't find the page you were looking for. It may have moved, or the link may be out of date.">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#FFFFFF">
+<!-- Google Analytics 4 with a consent banner (Eddy, 4 Nov 2026). GA loads only after "Accept analytics". Banner wording approved 2 Nov 2026. -->
+<style>
+#ts-ck{position:fixed;left:24px;bottom:24px;z-index:2147483000;width:400px;max-width:calc(100vw - 32px);box-sizing:border-box;background:#fff;color:#252525;border:1px solid rgba(37,37,37,.1);border-radius:20px;box-shadow:0 12px 40px rgba(37,37,37,.14);padding:22px 22px 20px;font-family:Figtree,system-ui,-apple-system,Segoe UI,Arial,sans-serif;opacity:0;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease}
+#ts-ck.on{opacity:1;transform:none}
+#ts-ck h2{margin:0 0 8px;font-size:17px;line-height:1.3;font-weight:500;color:#000;letter-spacing:-.01em}
+#ts-ck p{margin:0 0 16px;font-size:14px;line-height:1.5;color:#555}
+#ts-ck .ck-row{display:flex;gap:8px}
+#ts-ck button{flex:1;appearance:none;border:0;border-radius:999px;padding:12px 14px;font:500 15px/1 Figtree,system-ui,sans-serif;cursor:pointer;transition:transform .1s ease;white-space:nowrap}
+#ts-ck button:active{transform:scale(.97)}
+#ts-ck .ck-a{background:#252525;color:#fff}
+#ts-ck .ck-r{background:#252525;color:#fff}
+#ts-ck a{display:inline-block;margin-top:12px;font-size:13px;color:#555;text-decoration:underline;text-underline-offset:2px}
+#ts-ck button:focus-visible,#ts-ck a:focus-visible{outline:2px solid #FF5500;outline-offset:2px}
+@media (max-width:480px){#ts-ck{left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:20px 18px 18px}#ts-ck button{font-size:14px;padding:12px 10px}}
+.ts-ck-link{appearance:none;background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--ink-secondary,#6b6b6b);cursor:pointer;text-decoration:none}
+.ts-ck-link:hover{color:var(--ink,#252525)}
+</style>
+<script>
+(function(){
+  var GA='G-99217B0ZBR',KEY='ts-analytics-consent',loaded=false;
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments);};
+  function load(){if(loaded)return;loaded=true;gtag('js',new Date());gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('config',GA,{anonymize_ip:true});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);}
+  function clearGA(){var h=location.hostname.replace(/^www\./,'');document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(/^_ga/.test(n)){['', ';domain=.'+h,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
+  function close(b){b.classList.remove('on');setTimeout(function(){b.remove();},300);}
+  function banner(){if(document.getElementById('ts-ck'))return;var b=document.createElement('div');b.id='ts-ck';b.setAttribute('role','dialog');b.setAttribute('aria-live','polite');b.setAttribute('aria-label','Cookies on Talksign');
+    b.innerHTML='<h2>Cookies on Talksign</h2><p>We use essential cookies to make this site work. With your permission, we’d also like to use analytics cookies to see how people use the site so we can improve it.</p><div class="ck-row"><button type="button" class="ck-a">Accept analytics</button><button type="button" class="ck-r">Reject analytics</button></div><a href="#legal/cookies">Cookie Policy</a>';
+    document.body.appendChild(b);requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('on');});});
+    b.querySelector('.ck-a').onclick=function(){set('granted');load();close(b);};
+    b.querySelector('.ck-r').onclick=function(){var was=get()==='granted';set('denied');clearGA();close(b);if(was&&loaded)location.reload();};
+    b.querySelector('a').addEventListener('click',function(){close(b);});}
+  window.tsCookieSettings=banner;
+  function footerLink(){[].forEach.call(document.querySelectorAll('footer a[href="#legal/accessibility"],footer a[href="/legal/accessibility"]'),function(a){if(a.parentNode.querySelector('.ts-ck-link'))return;var x=document.createElement('button');x.type='button';x.className='ts-ck-link';x.textContent='Cookie settings';x.onclick=function(e){e.preventDefault();e.stopPropagation();banner();};a.parentNode.insertBefore(x,a.nextSibling);});}
+  var c=get();if(c==='granted')load();
+  function ready(){footerLink();if(!get())setTimeout(banner,600);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>
+
+<style>
+/* 404 "Lost in translation" (v2a, approved on the canvas; Eddy, 4 Nov 2026) */
+:root{--ink:#252525;--ink2:#555;--line:#EDEBE8;--orange:#FF5500}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:Figtree,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.hd{position:sticky;top:0;z-index:5;height:96px;padding:0 78px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.hd .logo img{height:26px;display:block}
+.hd nav{display:flex;gap:40px;margin-left:auto;margin-right:38px}
+.nl{font-size:17px;font-weight:500;text-decoration:none;color:var(--ink)}
+.nl:hover{color:#C73E00}
+.btns{display:flex;gap:12px;align-items:center}
+.b{display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 26px;border-radius:999px;font-size:17px;font-weight:500;text-decoration:none;white-space:nowrap;transition:transform .1s ease}
+.b:active{transform:scale(.97)}
+.b-o{background:#FF5500;color:#fff}
+.b-s{background:#FFE9DF;color:#A83500;box-shadow:inset 0 0 0 1px rgba(255,85,0,.28)}
+.mb{display:none;width:44px;height:44px;border:0;border-radius:999px;background:#F3F2EF;align-items:center;justify-content:center;cursor:pointer}
+.mm{display:none}
+.hero{padding:112px 78px 140px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px}
+.n404{display:flex;align-items:center;gap:8px;font-size:260px;line-height:.9;font-weight:500;letter-spacing:-0.06em;color:var(--ink)}
+.n404 .o{display:inline-flex;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 50% 45%,#FFF0EA 0%,#FFFFFF 72%);align-items:center;justify-content:center}
+.n404 svg{width:190px;height:190px}
+.lp404 .p{opacity:.25;animation:lp404 1.6s ease-in-out infinite}
+.lp404 .p2{animation-delay:.32s}.lp404 .p3{animation-delay:.64s}.lp404 .p4{animation-delay:.96s}.lp404 .p5{animation-delay:1.28s}
+@keyframes lp404{0%,100%{opacity:.25}20%{opacity:1}45%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.lp404 .p{animation:none;opacity:1}}
+h1{margin:0;font-size:64px;line-height:1.04;font-weight:500;letter-spacing:-0.05em;color:#000}
+.hero p{margin:0;font-size:19px;line-height:1.5;color:var(--ink2);max-width:560px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.cta .b{height:52px;padding:0 22px;font-size:16px}
+.ft{border-top:1px solid var(--line);padding:72px 78px 40px;display:flex;flex-direction:column;gap:56px;overflow:hidden}
+.ft .big{display:block;width:100%;height:auto}
+.ft .row{display:flex;justify-content:space-between;align-items:center;gap:64px}
+.ft .tag{margin:0;font-size:32px;line-height:1.15;font-weight:500;letter-spacing:-0.03em}
+.ft nav.fl{display:flex;gap:32px;flex-wrap:wrap}
+.ft nav.fl a{font-size:17px;font-weight:500;letter-spacing:-0.01em;text-decoration:none}
+.ft .bot{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:#6b6b6b}
+.ft .bot nav{display:flex;gap:20px;margin-left:auto;align-items:center}
+.ft .bot nav a{text-decoration:none;color:#6b6b6b}
+.ft .soc{display:flex;gap:18px;align-items:center;padding-left:24px;border-left:1px solid #DADADA}
+.ft .soc a{display:flex;color:var(--ink)}
+.made::before{content:"\2022";margin:0 10px;opacity:.5}
+/* tablet */
+@media (max-width:1023px){
+  .hd{padding:0 32px;height:80px}.hd nav,.hd .b-s{display:none}.mb{display:inline-flex}
+  .hero{padding:56px 32px 112px}.n404{font-size:200px}.n404 .o{width:176px;height:176px}.n404 svg{width:146px;height:146px}
+  h1{font-size:56px}
+  .ft{padding:56px 32px 32px;gap:40px}.ft .row{flex-direction:column;align-items:flex-start;gap:24px}
+  .ft .bot{flex-wrap:wrap}.ft .bot nav{margin-left:0}
+}
+/* phone */
+@media (max-width:639px){
+  .hd{padding:0 20px;height:68px}.hd .b-o{height:44px;padding:0 18px;font-size:15px}
+  .hero{padding:56px 20px;gap:24px}.n404{font-size:124px;gap:2px}.n404 .o{width:112px;height:112px}.n404 svg{width:94px;height:94px}
+  h1{font-size:40px}.hero p{font-size:17px}
+  .cta{flex-direction:column;width:100%}.cta .b{justify-content:center;width:100%}
+  .ft{padding:56px 20px 32px}.ft .tag{font-size:24px}.ft nav.fl{gap:16px 24px}
+  .ft .bot{flex-direction:column;align-items:flex-start}.ft .soc{padding-left:0;border-left:0}
+  .made::before{display:none}.made{display:block;margin-top:4px}
+}
+/* phone menu */
+.mm{position:fixed;inset:0;z-index:20;background:#fff;padding:0 20px 32px;flex-direction:column}
+.mm.on{display:flex}
+.mm .mh{height:68px;display:flex;align-items:center;justify-content:space-between}
+.mm a.it{display:block;padding:20px 0;border-bottom:1px solid var(--line);font-size:28px;font-weight:500;letter-spacing:-0.02em;text-decoration:none}
+.mm .sub{padding-left:16px}.mm .sub a.it{font-size:22px}
+.mm .b-o{margin-top:auto;justify-content:center;height:56px}
+@media (min-width:1024px){.mm.on{display:none}}
+</style>
+</head>
+<body>
+<header class="hd">
+  <a class="logo" href="/" aria-label="Talksign home"><img src="/assets/75f898565b2d14a77a2e35db33418321.svg" alt="Talksign"></a>
+  <nav aria-label="Main"><a class="nl" href="/#products">Products</a><a class="nl" href="/#models">Models</a><a class="nl" href="/marketplace">Marketplace</a><a class="nl" href="/blog">Insights</a><a class="nl" href="/about">Company</a></nav>
+  <div class="btns"><a class="b b-s" href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a><a class="b b-o" href="/waitlist">Get early access</a>
+  <button class="mb" type="button" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+</header>
+<div class="mm" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mh"><a href="/" aria-label="Talksign home"><img src="/assets/75f898565b2d14a77a2e35db33418321.svg" alt="Talksign" style="height:24px;display:block"></a><button class="mb mc" type="button" aria-label="Close menu" style="display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <a class="it" href="/#products">Products</a><a class="it" href="/#models">Models</a><a class="it" href="/marketplace">Marketplace</a><a class="it" href="/blog">Insights</a>
+  <div class="sub"><a class="it" href="/about">About</a><a class="it" href="/careers">Careers</a></div>
+  <a class="it" href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a>
+  <a class="b b-o" href="/waitlist">Get early access</a>
+</div>
+<main>
+<section class="hero">
+  <div class="n404" role="img" aria-label="404"><span aria-hidden="true">4</span><span class="o" aria-hidden="true"><svg class="lp404" viewBox="0 0 1000 1000" fill="none"><path class="p p1" d="M443.164 576.84C464.139 598.419 438.503 657.359 385.904 708.487C333.305 759.614 273.661 783.568 252.686 761.989C231.711 740.41 257.347 681.469 309.946 630.342C362.545 579.215 422.189 555.261 443.164 576.84Z" fill="#FF5500"/><path class="p p2" d="M429.849 484.136C415.807 510.753 351.83 504.585 286.951 470.36C222.072 436.134 180.859 386.812 194.901 360.195C208.942 333.578 272.919 339.745 337.798 373.971C402.677 408.196 443.89 457.519 429.849 484.136Z" fill="#FF5500"/><path class="p p3" d="M513.922 442.777C484.268 437.648 470.364 374.896 482.866 302.616C495.367 230.336 529.541 175.899 559.194 181.028C588.847 186.157 602.751 248.909 590.25 321.189C577.748 393.469 543.575 447.906 513.922 442.777Z" fill="#FF5500"/><path class="p p4" d="M579.216 509.932C574.931 480.146 630.315 447.53 702.921 437.084C775.526 426.638 837.858 442.317 842.144 472.104C846.43 501.891 791.045 534.506 718.44 544.952C645.834 555.398 583.502 539.719 579.216 509.932Z" fill="#FF5500"/><path class="p p5" d="M535.499 593.257C562.778 580.114 604.951 609.151 629.694 658.111C654.437 707.072 652.382 757.417 625.102 770.559C597.823 783.702 555.65 754.665 530.907 705.705C506.164 656.744 508.22 606.399 535.499 593.257Z" fill="#FF5500"/></svg></span><span aria-hidden="true">4</span></div>
+  <h1>Lost in translation</h1>
+  <p>We couldn’t find the page you were looking for. It may have moved, or the link may be out of date.</p>
+  <div class="cta"><a class="b b-o" href="/">Go to the homepage<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="b b-s" href="mailto:hello@talksign.co">Tell us what’s broken</a></div>
+</section>
+</main>
+<footer class="ft">
+  <img class="big" src="/assets/75f898565b2d14a77a2e35db33418321.svg" alt="Talksign">
+  <div class="row"><p class="tag">Frontier AI lab for sign language.</p>
+    <nav class="fl" aria-label="Footer"><a href="/#products">Products</a><a href="/#models">Models</a><a href="/#languages">Coverage</a><a href="/blog">Insights</a><a href="/marketplace">Marketplace</a><a href="/about">About</a><a href="/careers">Careers</a></nav></div>
+  <div class="bot"><span>© 2026 Talksign Ltd. All rights reserved.<span class="made">Building with <span role="img" aria-label="love">❤️</span> from London, United Kingdom</span></span>
+    <nav aria-label="Legal"><a href="/legal/trust-center">Legal &amp; Trust</a><a href="/legal/accessibility">Accessibility</a></nav>
+    <div class="soc"><a href="https://www.linkedin.com/company/talksign" target="_blank" rel="noopener" aria-label="Talksign on LinkedIn"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"/></svg></a><a href="https://x.com/talksignco" target="_blank" rel="noopener" aria-label="Talksign on X"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M215,219.85a8,8,0,0,1-7,4.15H160a8,8,0,0,1-6.75-3.71l-40.49-63.63L53.92,221.38a8,8,0,0,1-11.84-10.76l61.77-68L41.25,44.3A8,8,0,0,1,48,32H96a8,8,0,0,1,6.75,3.71l40.49,63.63,58.84-64.72a8,8,0,0,1,11.84,10.76l-61.77,67.95,62.6,98.38A8,8,0,0,1,215,219.85Z"/></svg></a><a href="https://www.youtube.com/@talksignai" target="_blank" rel="noopener" aria-label="Talksign on YouTube"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-73.74,65-40,28A8,8,0,0,1,108,156V100a8,8,0,0,1,12.59-6.55l40,28a8,8,0,0,1,0,13.1Z"/></svg></a></div></div>
+</footer>
+<script>
+(function(){var m=document.querySelector('.mm'),o=document.querySelector('.hd .mb'),c=m.querySelector('.mc');
+function set(v){m.classList.toggle('on',v);o.setAttribute('aria-expanded',v?'true':'false');document.documentElement.style.overflow=v?'hidden':'';if(v)c.focus();else o.focus();}
+o.onclick=function(){set(true);};c.onclick=function(){set(false);};document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))set(false);});})();
+</script>
+</body>
+</html>
