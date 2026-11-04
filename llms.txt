@@ -1,6 +1,6 @@
 # Talksign
 
-> Talksign is an artificial intelligence research and product company. Talksign turns speech into sign and sign into speech, on smart glasses, phones and computers. Its goal: no one should be left out of a conversation.
+> Talksign is an artificial intelligence research and product company building AI infrastructure for sign language translation. Talksign turns speech into sign and sign into speech, on smart glasses, phones and computers. Its goal: no one should be left out of a conversation.
 
 Talksign Ltd was founded in London in November 2025. It builds sign language AI with Deaf communities, not just for them. Talksign is backed by NVIDIA and Wild & Mild.
 

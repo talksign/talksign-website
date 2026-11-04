@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.talksign.co/</loc><lastmod>2026-11-04</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.talksign.co/marketplace</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/about</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/careers</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/translate</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/blog</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/legal</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/waitlist</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/letter-of-intent</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.talksign.co/blog/why-captions-arent-enough</loc><lastmod>2026-09-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.talksign.co/blog/introducing-the-talksign-marketplace</loc><lastmod>2026-08-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.talksign.co/blog/palm-and-echo</loc><lastmod>2026-05-22</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.talksign.co/blog/introducing-talksign-1</loc><lastmod>2026-02-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.talksign.co/</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/marketplace</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/about</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/careers</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/translate</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/blog</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/legal</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/waitlist</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/letter-of-intent</loc><lastmod>2026-11-04</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/blog/why-captions-arent-enough</loc><lastmod>2026-09-03</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/blog/introducing-the-talksign-marketplace</loc><lastmod>2026-08-25</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/blog/palm-and-echo</loc><lastmod>2026-05-22</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.talksign.co/blog/introducing-talksign-1</loc><lastmod>2026-02-16</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
 </urlset>
