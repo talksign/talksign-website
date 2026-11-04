@@ -1749,7 +1749,7 @@ html.m .hc-play{width:56px;height:56px;margin:-28px 0 0 -28px}
  var tv=document.createElement('video'),WEBM=!WK&&!!tv.canPlayType&&tv.canPlayType('video/webm; codecs="vp9"')!=='';
  function vsrc(el){var w=el.getAttribute('data-video'),m=el.getAttribute('data-mp4');return (WEBM||!m)?w:m;}
  function vid(el,on){var v=el.querySelector('.hc-vid'),src=el.getAttribute('data-video')&&vsrc(el);if(!v||!src)return;el.classList.add('has-vid');
-   if(on){if(!v.getAttribute('src'))v.setAttribute('src',src);v.onloadeddata=function(){v.classList.add('ready');};el._done=false;el._lt=0;v.ontimeupdate=function(){var t=v.currentTime;if((v.duration&&t>=v.duration-0.35)||t<el._lt-1)el._done=true;el._lt=t;};v.onended=function(){el._done=true;/* Eddy, 4 Nov: each avatar signs once, then the next one starts */if(cs[act]===el&&!document.hidden)go(act+1);};v.onplaying=function(){el.classList.add('playing');};v.onerror=function(){el.classList.remove('has-vid','playing');el._done=true;};v.onpause=function(){el.classList.remove('playing');};try{v.currentTime=0;}catch(e){}v.muted=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}
+   if(on){if(!v.getAttribute('src'))v.setAttribute('src',src);v.onloadeddata=function(){v.classList.add('ready');};el._done=false;el._lt=0;v.ontimeupdate=function(){var t=v.currentTime;if((v.duration&&t>=v.duration-0.35)||t<el._lt-1)el._done=true;el._lt=t;};v.onended=function(){el._done=true;/* Eddy, 4 Nov: each avatar signs once, then the next one starts */if(cs[act]===el&&!document.hidden)go(act+1);};v.onplaying=function(){v.classList.add('ready');el.classList.add('playing');};if(v.readyState>=2)v.classList.add('ready');/* 2nd loop: already loaded, so loadeddata won't fire again */v.onerror=function(){el.classList.remove('has-vid','playing');el._done=true;};v.onpause=function(){el.classList.remove('playing');};try{v.currentTime=0;}catch(e){}v.muted=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}
    else{v.pause();v.classList.remove('ready');el.classList.remove('playing');}}
  function place(el,o,d,opacity){var step=d.cw/2+d.gap+d.sw/2;
    el.style.setProperty('--x',(o*step)+'px');el.style.setProperty('--y',(o===0?-20:-6)+'px');
@@ -4017,7 +4017,7 @@ function closeVideo(){if(vmod){vmod.style.display='none';vmod.querySelector('.vb
     if(e.target.closest('.ts-menu-cta button')){e.stopPropagation();setOpen(false);openModal();return;}
     var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(/^https/.test(h)){setOpen(false);return;}
     e.preventDefault();e.stopPropagation();setOpen(false);
-    if(a.classList.contains('ts-menu-logo'))go('home');else if(h==='/blog'||h==='#blog')go('blog');else if(h==='#marketplace'||h==='#about'||h==='#careers')go(h.slice(1));else go('home',h.slice(1));
+    if(a.classList.contains('ts-menu-logo'))go('home');else if(h==='/blog'||h==='#blog')go('blog');else if(/^[#\/](marketplace|about|careers|translate)$/.test(h))go(h.slice(1));/* real URLs too (Vercel rewrites #x to /x) */else go('home',h.slice(1));
   });
   window.addEventListener('hashchange',function(){if(!menu.hidden)setOpen(false);});
   window.addEventListener('resize',function(){if(!document.documentElement.classList.contains('m')&&!menu.hidden)setOpen(false);});
