@@ -1,0 +1,40 @@
+# Talksign
+
+> Talksign is an artificial intelligence research and product company. Talksign turns speech into sign and sign into speech, on smart glasses, phones and computers. Its goal: no one should be left out of a conversation.
+
+Talksign Ltd was founded in London in November 2025. It builds sign language AI with Deaf communities, not just for them. Talksign is backed by NVIDIA and Wild & Mild.
+
+## Products and models
+- Talksign-1: Talksign's first model, launched February 2026.
+- Palm: sign to speech. Palm 1.0 launched May 2026; Palm 2.0 in November 2026.
+- Echo: speech to sign, with photorealistic avatars. Echo 1.0 launched May 2026; Echo 2.0 in November 2026.
+- Morph: turns one signing video into a new signing video. Morph 1.0 launched October 2026.
+- Languages: American Sign Language (ASL) translation is live. Other sign languages are in development.
+
+## Talksign Marketplace
+A marketplace for sign language data. People fluent in sign language earn by recording signing videos; AI teams, research labs and universities license consented, Deaf-reviewed, quality-controlled datasets. Every dataset carries a certificate anyone can check.
+
+## Pages
+- [Home](https://www.talksign.co/): what Talksign does and who it is for
+- [Marketplace](https://www.talksign.co/marketplace): sign language datasets for AI, and paid signing work
+- [About](https://www.talksign.co/about): mission, principles, journey and team
+- [Careers](https://www.talksign.co/careers): open roles (remote, full-time)
+- [Insights](https://www.talksign.co/blog): research notes and product updates
+- [Legal and Trust](https://www.talksign.co/legal): privacy, terms and accessibility
+
+## Insights (articles)
+- [Why Captions Aren't Enough for Deaf People](https://www.talksign.co/blog/why-captions-arent-enough) (3 Sep 2026, Community): We often think language is just words. But for Deaf people, communication is much more than that. AI needs to understand this difference to truly help everyone.
+- [Introducing the Talksign Marketplace](https://www.talksign.co/blog/introducing-the-talksign-marketplace) (25 Aug 2026, Product): A marketplace for licensable multimodal sign language datasets.
+- [Palm 1.0 and Echo 1.0: Real-time sign language AI and photorealistic avatars that understand context, not just gestures](https://www.talksign.co/blog/palm-and-echo) (22 May 2026, Research): Palm 1.0 and Echo 1.0 set a new global standard for real-time sign language translation with 84% semantic accuracy, delivering human-competitive accuracy and opening the door to a truly inclusive future.
+- [Introducing Talksign-1](https://www.talksign.co/blog/introducing-talksign-1) (16 Feb 2026, Research): Breaking down communication barriers with our first-generation AI model for real-time Sign Language recognition
+
+Full text of every article: https://www.talksign.co/llms-full.txt
+
+## Contact
+- Book a demo: https://cal.com/edidiongekong/talksign
+- Marketplace: marketplace@talksign.co
+- LinkedIn: https://www.linkedin.com/company/talksign
+- X: https://x.com/talksignco
+- YouTube: https://www.youtube.com/@talksignai
+
+Note: Talksign (www.talksign.co) is not affiliated with other businesses that use a similar name.
