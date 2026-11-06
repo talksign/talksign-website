@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talksign Playground</title>
+<meta name="description" content="Try Talksign in your browser: speech to sign, sign to speech and video to video. Confirm your email to get 10 free credits.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.talksign.co/playground">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#FFFFFF">
+<!-- Google Analytics 4 with a consent banner (Eddy, 4 Nov 2026). GA loads only after "Accept analytics". Banner wording approved 2 Nov 2026. -->
+<style>
+#ts-ck{position:fixed;left:24px;bottom:24px;z-index:2147483000;width:400px;max-width:calc(100vw - 32px);box-sizing:border-box;background:#fff;color:#252525;border:1px solid rgba(37,37,37,.1);border-radius:20px;box-shadow:0 12px 40px rgba(37,37,37,.14);padding:22px 22px 20px;font-family:Figtree,system-ui,-apple-system,Segoe UI,Arial,sans-serif;opacity:0;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease}
+#ts-ck.on{opacity:1;transform:none}
+#ts-ck h2{margin:0 0 8px;font-size:17px;line-height:1.3;font-weight:500;color:#000;letter-spacing:-.01em}
+#ts-ck p{margin:0 0 16px;font-size:14px;line-height:1.5;color:#555}
+#ts-ck .ck-row{display:flex;gap:8px}
+#ts-ck button{flex:1;appearance:none;border:0;border-radius:999px;padding:12px 14px;font:500 15px/1 Figtree,system-ui,sans-serif;cursor:pointer;transition:transform .1s ease;white-space:nowrap}
+#ts-ck button:active{transform:scale(.97)}
+#ts-ck .ck-a{background:#252525;color:#fff}
+#ts-ck .ck-r{background:#252525;color:#fff}
+#ts-ck a{display:inline-block;margin-top:12px;font-size:13px;color:#555;text-decoration:underline;text-underline-offset:2px}
+#ts-ck button:focus-visible,#ts-ck a:focus-visible{outline:2px solid #FF5500;outline-offset:2px}
+@media (max-width:480px){#ts-ck{left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:20px 18px 18px}#ts-ck button{font-size:14px;padding:12px 10px}}
+.ts-ck-link{appearance:none;background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--ink-secondary,#6b6b6b);cursor:pointer;text-decoration:none}
+.ts-ck-link:hover{color:var(--ink,#252525)}
+</style>
+<script>
+(function(){
+  var GA='G-99217B0ZBR',KEY='ts-analytics-consent',loaded=false;
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments);};
+  function load(){if(loaded)return;loaded=true;gtag('js',new Date());gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('config',GA,{anonymize_ip:true});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);}
+  function clearGA(){var h=location.hostname.replace(/^www\./,'');document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(/^_ga/.test(n)){['', ';domain=.'+h,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
+  function close(b){b.classList.remove('on');setTimeout(function(){b.remove();},300);}
+  function banner(){if(document.getElementById('ts-ck'))return;var b=document.createElement('div');b.id='ts-ck';b.setAttribute('role','dialog');b.setAttribute('aria-live','polite');b.setAttribute('aria-label','Cookies on Talksign');
+    b.innerHTML='<h2>Cookies on Talksign</h2><p>We use essential cookies to make this site work. With your permission, we’d also like to use analytics cookies to see how people use the site so we can improve it.</p><div class="ck-row"><button type="button" class="ck-a">Accept analytics</button><button type="button" class="ck-r">Reject analytics</button></div><a href="#legal/cookies">Cookie Policy</a>';
+    document.body.appendChild(b);requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('on');});});
+    b.querySelector('.ck-a').onclick=function(){set('granted');load();close(b);};
+    b.querySelector('.ck-r').onclick=function(){var was=get()==='granted';set('denied');clearGA();close(b);if(was&&loaded)location.reload();};
+    b.querySelector('a').addEventListener('click',function(){close(b);});}
+  window.tsCookieSettings=banner;
+  function footerLink(){[].forEach.call(document.querySelectorAll('footer a[href="#legal/accessibility"],footer a[href="/legal/accessibility"]'),function(a){if(a.parentNode.querySelector('.ts-ck-link'))return;var x=document.createElement('button');x.type='button';x.className='ts-ck-link';x.textContent='Cookie settings';x.onclick=function(e){e.preventDefault();e.stopPropagation();banner();};a.parentNode.insertBefore(x,a.nextSibling);});}
+  var c=get();if(c==='granted')load();
+  function ready(){footerLink();if(!get())setTimeout(banner,600);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>
+
+<script>window.TALKSIGN_SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbysEUajo_4AkHuFXWPQ1PKDJz-HS3wnl1P6w8GnL49LfGtvppqNtjL-lHrd443-k-Yh/exec';</script>
+</head>
+<body>
+<!--PG-START-->
+<style>
+/* Talksign Playground (6C + header B, approved on the canvas; Eddy, 5-6 Nov 2026) */
+:root{--ink:#1d1d1f;--ink2:#6e6e73;--ink3:#86868b;--fill:#F5F5F7;--seg:#E8E8ED;--line:#E5E5EA;--orange:#FF5500;--orange-ink:#A83500;--orange-bg:#FFF0EA;--panel:#111}
+.pg,.pg *,.pg-ov,.pg-ov *,.pg-toast,.pg-test{box-sizing:border-box}
+.pg,.pg-ov,.pg-toast,.pg-test{font-family:Figtree,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html,body{margin:0;background:#fff}
+.pg{font-family:Figtree,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;height:100vh;height:100dvh;min-height:640px;display:flex;flex-direction:column;background:#fff}
+:where(.pg,.pg-ov,.pg-test) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:where(.pg,.pg-ov) a{color:inherit;text-decoration:none}
+:where(.pg,.pg-ov) :focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:999px}
+.pg-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* header */
+.pg-hd{height:96px;flex-shrink:0;padding:0 78px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.pg-brand{display:flex;align-items:center;gap:12px}
+.pg-brand img{height:26px;display:block}
+.pg-tag{font-size:13px;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--fill)}
+.pg-seg{display:inline-flex;padding:3px;border-radius:999px;background:var(--seg)}
+.pg-seg button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:160px;height:36px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink2);white-space:nowrap;transition:background .2s,color .2s,box-shadow .2s}
+.pg-seg button small{display:inline-flex;align-items:center;gap:3px;height:20px;padding:0 7px 0 6px;border-radius:999px;background:rgba(0,0,0,.05);font-size:12px;font-weight:500;color:var(--ink3)}
+.pg-seg button[aria-selected=true] small{background:var(--orange-bg);color:var(--orange-ink)}
+.pg-seg button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.pg-right{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.pg-pill{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap;background:var(--orange-bg);color:var(--orange-ink)}
+.pg-pill[data-s=ok]{background:var(--fill);color:var(--ink)}
+.pg-pill[data-s=out]{background:#FDECEC;color:#B42318}
+.pg-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 20px;border-radius:999px;background:var(--orange);color:#fff!important;font-size:15px;font-weight:500;white-space:nowrap}
+.pg-btn:hover{background:#E64D00}
+.pg-btn.dark{background:var(--ink)}.pg-btn.dark:hover{background:#000}
+/* stage */
+.pg-main{flex:1;min-height:0;padding:8px 78px 26px;display:flex;flex-direction:column;gap:18px}
+.pg-grid{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pg-card{position:relative;border-radius:28px;overflow:hidden;min-height:0}
+.pg-light{background:var(--fill);padding:40px 44px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.pg-dark{background:var(--panel)}
+.pg-lab{font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--ink3);text-transform:uppercase}
+.pg-dark .pg-lab{position:absolute;top:36px;left:40px;z-index:2}
+.pg-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.pg-in{flex:1;min-width:0;height:40px;border:0;outline:none;background:transparent;font:inherit;font-size:16px;color:var(--ink);padding:0 4px}
+.pg-in::placeholder{color:var(--ink3)}
+.pg-q{flex:1;min-height:0;width:100%;margin:0;overflow:hidden;overflow-wrap:anywhere;border:0;background:transparent;font:inherit;font-size:36px;line-height:1.2;font-weight:500;letter-spacing:-0.02em;color:var(--ink);outline:none;padding:0}
+.pg-q::placeholder{color:#B5B5BA}
+.pg-q.empty{color:#B5B5BA}
+.pg-out{margin:0;font-size:36px;line-height:1.2;font-weight:500;letter-spacing:-0.02em}
+.pg-out.empty{color:#B5B5BA}
+.pg-bar{width:100%;height:52px;flex-shrink:0;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);display:flex;align-items:center;gap:10px;padding:0 6px 0 10px}
+.pg-ic{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.pg-ic:hover{background:var(--fill)}
+.pg-ic.rec{background:#FDECEC;color:#B42318}
+.pg-hint{flex:1;min-width:0;font-size:16px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pg-try{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:var(--orange);color:#fff;font-size:14px;font-weight:500;white-space:nowrap}
+.pg-try:hover{background:#E64D00}
+/* Try: "▶ Try" + coin badge with the cost (Eddy, 6 Nov) */
+.pg-try{height:40px;padding:0 6px 0 16px;gap:6px}
+.pg-try .tf{display:none}
+.pg-try .tc{display:inline-flex;align-items:center;gap:3px;height:28px;padding:0 9px 0 8px;border-radius:999px;background:rgba(255,255,255,.22);font-size:13px}
+.pg-try .tm{display:inline-flex;order:-1}
+.pg-try.buy{padding-right:16px}
+.pg-try[disabled]{background:#D2D2D7;cursor:default}
+.pg-prog{position:absolute;left:24px;right:24px;bottom:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);z-index:2;opacity:0;transition:opacity .2s}
+.pg-prog i{display:block;height:100%;width:0;border-radius:2px;background:#fff}
+.pg-card.playing .pg-prog{opacity:1}
+.pg-wave{display:flex;align-items:center;gap:14px}
+.pg-spk{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pg-bars{display:flex;align-items:center;gap:3px;height:34px}
+.pg-bars i{display:block;width:3px;border-radius:2px;background:var(--ink);height:6px;opacity:.35;transition:height .12s}
+.pg-light.speaking .pg-bars i{opacity:1}
+.pg-inner{position:absolute;inset:16px 16px 84px;border-radius:20px;overflow:hidden;background:var(--panel)}
+.pg-inner .pg-lab{position:absolute;top:24px;left:24px;z-index:2}
+.pg-cam{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 12px;border-radius:999px;background:var(--fill);color:var(--ink);font-size:14px;font-weight:500;white-space:nowrap;flex-shrink:0}
+.pg-cam:hover{background:#EBEBF0}
+.pg-cam[aria-pressed=true]{background:#E7F6EC;color:#1F7A45}
+.pg-cam[aria-pressed=true]::after{content:'';width:8px;height:8px;border-radius:50%;background:#1F9D55;order:-1}
+.pg-live{position:absolute;top:22px;right:22px;z-index:2;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:500}
+.pg-live::before{content:'';width:6px;height:6px;border-radius:50%;background:#FF3B30}
+.pg-vid.mirror{transform:scaleX(-1)}
+.pg-v2v .pg-bar{position:absolute;left:16px;right:16px;bottom:16px;width:auto}
+/* menus */
+.pg-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-shrink:0}
+.pg-menus{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.pg-menu{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--ink2);position:relative}
+.pg-menu select{appearance:none;-webkit-appearance:none;border:0;background:transparent;font:inherit;font-weight:500;color:var(--ink);padding:4px 16px 4px 0;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center}
+.pg-demo{font-size:14px;color:var(--ink2);white-space:nowrap}
+.pg-demo a{color:var(--orange-ink);font-weight:500}
+.pg [hidden],.pg-test[hidden]{display:none!important}
+.pg-mode{display:contents}
+.pg-mode[hidden]{display:none}
+/* modal */
+.pg-ov{position:fixed;inset:0;z-index:50;background:rgba(245,245,247,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;padding:16px}
+.pg-ov.on{display:flex}
+.pg-mo{color:var(--ink);width:480px;max-width:100%;max-height:calc(100dvh - 32px);overflow:auto;background:#fff;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.04);padding:36px;display:flex;flex-direction:column;gap:18px;position:relative}
+.pg-mo>*{flex-shrink:0}
+@media (max-height:560px){.pg-mo{padding:22px 26px;gap:12px;width:560px}.pg-mi{display:none!important}.pg-mo h2{font-size:22px}.pg-costs div,.pg-pack{padding-top:8px;padding-bottom:8px}.pg-mo .pg-pack{height:56px;flex:1;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;padding:0 14px;font-size:14px}.pg-mo .pg-packs{flex-direction:row}.pg-big{height:46px}}
+.pg-x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.pg-x:hover{background:var(--fill)}
+.pg-mi{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;align-self:center}
+.pg-mo h2{margin:0;font-size:28px;line-height:1.15;font-weight:500;letter-spacing:-0.02em;color:#000;text-align:center}
+.pg-mo p{margin:0;font-size:16px;line-height:1.5;color:var(--ink2);text-align:center}
+.pg-costs{border-radius:18px;background:var(--fill);padding:6px 18px}
+.pg-costs div{display:flex;justify-content:space-between;padding:12px 0;font-size:15px}
+.pg-costs div+div{border-top:1px solid var(--line)}
+.pg-costs span:last-child{color:var(--ink2)}
+.pg-field{display:flex;flex-direction:column;gap:6px}
+.pg-field label{font-size:13px;color:var(--ink2)}
+.pg-field input{height:52px;padding:0 18px;border-radius:14px;border:0;box-shadow:inset 0 0 0 1.5px #D2D2D7;font:inherit;font-size:16px;color:var(--ink);outline:none}
+.pg-field input:focus{box-shadow:inset 0 0 0 1.5px var(--orange)}
+.pg-err{font-size:13px;color:#B42318;min-height:0}
+.pg-big{display:flex;align-items:center;justify-content:center;height:52px;width:100%;border-radius:999px;background:var(--orange);color:#fff;font-size:16px;font-weight:500}
+.pg-big:hover{background:#E64D00}
+.pg-big[disabled]{opacity:.6}
+.pg-fine{font-size:12px!important;color:var(--ink3)!important}
+.pg-links{display:flex;justify-content:center;gap:24px;font-size:14px}
+.pg-links button{color:var(--ink2)}.pg-links button.o{color:var(--orange-ink);font-weight:500}
+.pg-wait{display:flex;align-items:center;justify-content:center;gap:10px;height:52px;border-radius:999px;background:var(--fill);font-size:15px;color:var(--ink2)}
+.pg-spin{width:16px;height:16px;border-radius:50%;border:2px solid #D2D2D7;border-top-color:var(--orange);animation:pgspin .8s linear infinite}
+@keyframes pgspin{to{transform:rotate(360deg)}}
+.pg-packs{display:flex;flex-direction:column;gap:10px}
+.pg-pack{display:flex;justify-content:space-between;align-items:center;height:52px;padding:0 18px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);font-size:15px;font-weight:500;text-align:left}
+.pg-pack[aria-checked=true]{box-shadow:inset 0 0 0 1.5px var(--orange);background:#FFF8F4}
+.pg-pack span:last-child{color:var(--ink)}
+.pg-pack em{font-style:normal;font-size:12px;color:var(--ink3);font-weight:400}
+.pg-toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,8px);z-index:60;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:var(--ink);color:#fff;font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.pg-toast.on{opacity:1;transform:translate(-50%,0)}
+.pg-left{position:relative;display:flex;align-items:center;gap:8px}
+.pg-chip{white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:999px;background:#FFF8E1;color:#6B4E00!important;font-size:12px!important;font-weight:500;text-decoration:none!important}
+.pg-chip::before{content:'';width:6px;height:6px;border-radius:50%;background:#E0A100}
+.pg-test{position:absolute;left:0;top:calc(100% + 10px);z-index:40;width:300px;padding:12px 14px;border-radius:14px;background:#FFF8E1;color:#6B4E00;font-size:12px;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.pg-test b{font-weight:500}
+.pg-test button{color:#6B4E00;text-decoration:underline;font-size:12px}
+/* cookie banner sits bottom-right here so it never covers the input bar */
+#ts-ck{left:auto!important;right:24px}
+html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its input bar on the right */
+/* responsive */
+@media (max-width:1200px){.pg-hd,.pg-main{padding-left:32px;padding-right:32px}.pg-seg button{min-width:0}.pg-q,.pg-out{font-size:30px}}
+@media (max-width:1180px) and (min-width:981px){.pg-seg button{padding:0 10px;gap:5px;font-size:14px}.pg-brand .pg-tag{display:none}.pg-hd{gap:12px}}
+@media (min-width:1800px){.pg-hd,.pg-main{padding-left:max(78px,calc((100vw - 1760px)/2));padding-right:max(78px,calc((100vw - 1760px)/2))}.pg-q,.pg-out{font-size:42px}}
+@media (max-width:980px){
+ .pg{height:auto;min-height:100dvh}
+ .pg-hd{height:auto;padding:16px 20px;grid-template-columns:1fr auto;row-gap:14px}
+ .pg-seg{grid-column:1/-1;grid-row:2;justify-self:center;max-width:100%;overflow-x:auto}
+ .pg-seg button{padding:0 12px;font-size:14px}
+ .pg-main{padding:8px 20px 24px}
+ .pg-grid{grid-template-columns:1fr}
+ .pg-card{min-height:340px}
+ .pg-light{padding:28px 24px;min-height:300px}
+ .pg-q,.pg-out{font-size:26px}
+ .pg-dark .pg-lab{top:24px;left:24px}
+ .pg-foot{flex-direction:column;align-items:stretch;gap:16px}
+ .pg-menus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+ .pg-menu{position:relative;flex-direction:column;align-items:stretch;gap:2px;min-width:0;padding:10px 14px 9px;border-radius:16px;background:var(--fill);font-size:12px;color:var(--ink3)}
+ .pg-menu:focus-within{box-shadow:inset 0 0 0 1.5px var(--orange)}
+ .pg-menu{min-height:58px}
+ .pg-menu select{position:absolute;inset:0;width:100%!important;height:100%;font-size:15px;padding:24px 32px 8px 14px;border-radius:16px;text-overflow:ellipsis;background-position:right 14px bottom 15px}
+ .pg-menu select:focus-visible{outline:none}
+ .pg-demo{display:flex;justify-content:center;gap:4px;padding:2px 0 4px;font-size:14px}
+ .pg-demo a::after{content:' \2192'}
+ .pg-dark .pg-lab,.pg-inner .pg-lab{padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.5);color:#E5E5EA}
+ .pg-toast{bottom:24px}
+}
+@media (max-width:600px){.pg-right .pg-btn{display:none!important}}
+.pg-pill b{font-weight:500}
+@media (max-width:400px){.pg-pill .pw{display:none}.pg-pill{padding:0 12px}.pg-hd{padding:14px 16px}.pg-main{padding:8px 16px 24px}.pg-seg button{font-size:12px;padding:0 4px}.pg-left{gap:6px}.pg-brand img{height:22px}}
+@media (max-width:640px){.pg-menus{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){#pgCamHint,#pgUpHint2{display:none}.pg-cam span{display:none}.pg-cam{width:40px;padding:0;justify-content:center;background:var(--fill)}.pg-cam[aria-pressed=true]::after{position:absolute;margin:-22px -22px 0 0}.pg-cam{position:relative}.pg-v2v .pg-bar{gap:6px}.pg-v2v .pg-bar .pg-ic{background:var(--fill)}.pg-v2v .pg-bar .pg-try{margin-left:auto}.pg-seg{border-radius:20px;width:100%}.pg-seg button{flex:1;flex-direction:column;gap:3px;height:54px;padding:0 6px;border-radius:17px;font-size:13px}.pg-seg button small{height:18px;padding:0 6px 0 5px;gap:3px;font-size:11px}.pg-brand .pg-tag{display:none}.pg-mo{padding:28px 22px}.pg-mo h2{font-size:24px}}
+</style>
+
+<div class="pg" id="pg">
+ <header class="pg-hd">
+  <div class="pg-left"><a class="pg-brand" href="/" aria-label="Talksign home"><img src="/assets/75f898565b2d14a77a2e35db33418321.svg" alt="Talksign"><span class="pg-tag">Playground</span></a><button class="pg-chip" id="pgChip" type="button" aria-expanded="false" aria-controls="pgTest">Beta</button><div class="pg-test" id="pgTest" hidden></div></div>
+  <div class="pg-seg" role="tablist" aria-label="Mode">
+   <button role="tab" aria-selected="true" data-m="0">Speech to sign <small aria-label="3 credits"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>3</small></button>
+   <button role="tab" aria-selected="false" data-m="1">Sign to speech <small aria-label="3 credits"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>3</small></button>
+   <button role="tab" aria-selected="false" data-m="2">Video to video <small aria-label="4 credits"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>4</small></button>
+  </div>
+  <div class="pg-right">
+   <button class="pg-pill" id="pgPill" type="button" aria-live="polite"></button>
+   <a class="pg-btn" id="pgCta" href="/waitlist">Get early access</a>
+  </div>
+ </header>
+
+ <main class="pg-main">
+  <h1 class="pg-sr">Talksign Playground</h1>
+
+  <!-- Mode 0: Speech to sign (Echo) -->
+  <div class="pg-mode" data-mode="0">
+   <div class="pg-grid">
+    <div class="pg-card pg-light">
+     <span class="pg-lab">English</span>
+     <p class="pg-q empty" id="pgText" aria-live="polite">Your text will appear here</p>
+     <div class="pg-bar">
+      <button class="pg-ic" id="pgMic" type="button" aria-label="Speak instead of typing" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      <input class="pg-in" id="pgIn0" type="text" maxlength="200" autocomplete="off" aria-label="Type something to sign" placeholder="Speak, or type something to sign">
+      <button class="pg-try" type="button" data-try="0"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg><span>Try for 3 credits</span></button>
+     </div>
+    </div>
+    <div class="pg-card pg-dark" id="pgOut0">
+     <span class="pg-lab" data-sl>ASL</span>
+     <video class="pg-vid" id="pgAv0" muted playsinline preload="metadata" poster="/assets/pg-amara.jpg"><source src="/assets/hero-amara.webm" type="video/webm"><source src="/assets/hero-amara.mp4" type="video/mp4"></video>
+     <span class="pg-prog"><i></i></span>
+    </div>
+   </div>
+   <div class="pg-foot">
+    <div class="pg-menus">
+     <span class="pg-menu">Model <select aria-label="Model"><option>Echo 2.0</option><option>Echo 1.0</option></select></span>
+     <span class="pg-menu">Avatar <select aria-label="Avatar" data-avatar="0"><option value="amara">Amara</option><option value="arthur">Arthur</option><option value="elena">Elena</option></select></span>
+     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option>BSL</option><option>Auslan</option></select></span>
+     <span class="pg-menu">Language <select aria-label="Language"><option>English</option></select></span>
+    </div>
+    <span class="pg-demo">Want this in your product? <a href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></span>
+   </div>
+  </div>
+
+  <!-- Mode 1: Sign to speech (Palm) -->
+  <div class="pg-mode" data-mode="1" hidden>
+   <div class="pg-grid">
+    <div class="pg-card pg-v2v" style="background:var(--fill)" id="pgIn1">
+     <div class="pg-inner">
+      <span class="pg-lab"><span data-sl>ASL</span>, <span id="pgSrcLab">sample signer</span></span>
+      <span class="pg-live" id="pgLive" hidden>Live</span>
+      <video class="pg-vid" id="pgCam" muted playsinline preload="metadata" poster="/assets/pg-arthur.jpg"><source src="/assets/hero-arthur.webm" type="video/webm"><source src="/assets/hero-arthur.mp4" type="video/mp4"></video>
+      <span class="pg-prog"><i></i></span>
+     </div>
+     <div class="pg-bar">
+      <button class="pg-cam" id="pgCamBtn" type="button" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5M2 3l20 18"/></svg><span>Camera off</span></button>
+      <button class="pg-ic" type="button" aria-label="Upload a video" data-upload="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></button>
+      <span class="pg-hint" id="pgCamHint">Turn the camera on, or upload</span>
+      <button class="pg-try" type="button" data-try="1"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg><span>Try for 3 credits</span></button>
+     </div>
+    </div>
+    <div class="pg-card pg-light" id="pgOut1">
+     <div style="display:flex;flex-direction:column;gap:14px">
+      <span class="pg-lab">English, spoken aloud</span>
+      <p class="pg-out empty" id="pgSpoken">Press Try to hear the translation.</p>
+     </div>
+     <div class="pg-wave"><button class="pg-spk" id="pgReplay" type="button" aria-label="Play the spoken translation again"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><span class="pg-bars" id="pgBars" aria-hidden="true"></span></div>
+    </div>
+   </div>
+   <div class="pg-foot">
+    <div class="pg-menus">
+     <span class="pg-menu">Model <select aria-label="Model"><option>Palm 2.0</option><option>Palm 1.0</option></select></span>
+     <span class="pg-menu">Voice <select aria-label="Voice" id="pgVoice"><option value="0">Voice 1</option><option value="1">Voice 2</option></select></span>
+     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option>BSL</option><option>Auslan</option></select></span>
+     <span class="pg-menu">Language <select aria-label="Language"><option>English</option></select></span>
+    </div>
+    <span class="pg-demo">Want this in your product? <a href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></span>
+   </div>
+  </div>
+
+  <!-- Mode 2: Video to video (Morph) -->
+  <div class="pg-mode" data-mode="2" hidden>
+   <div class="pg-grid">
+    <div class="pg-card pg-v2v" style="background:var(--fill)" id="pgIn2">
+     <div class="pg-inner">
+      <span class="pg-lab">Your video</span>
+      <video class="pg-vid" id="pgSrc2" muted playsinline preload="metadata" poster="/assets/pg-elena.jpg"><source src="/assets/hero-elena.webm" type="video/webm"><source src="/assets/hero-elena.mp4" type="video/mp4"></video>
+      <span class="pg-prog"><i></i></span>
+     </div>
+     <div class="pg-bar">
+      <button class="pg-ic" type="button" aria-label="Upload a video" data-upload="2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></button>
+      <span class="pg-hint" id="pgUpHint2">Upload or record a video</span>
+      <button class="pg-try" type="button" data-try="2"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg><span>Try for 4 credits</span></button>
+     </div>
+    </div>
+    <div class="pg-card pg-dark" id="pgOut2">
+     <span class="pg-lab">New signer: <span data-avname>Amara</span></span>
+     <video class="pg-vid" id="pgAv2" muted playsinline preload="metadata" poster="/assets/pg-amara.jpg"><source src="/assets/hero-amara.webm" type="video/webm"><source src="/assets/hero-amara.mp4" type="video/mp4"></video>
+     <canvas class="pg-vid" id="pgKey" width="960" height="720" hidden aria-hidden="true"></canvas>
+     <span class="pg-prog"><i></i></span>
+    </div>
+   </div>
+   <div class="pg-foot">
+    <div class="pg-menus">
+     <span class="pg-menu">Model <select aria-label="Model"><option>Morph 1.0</option><option disabled>Morph 2.0 (coming soon)</option></select></span>
+     <span class="pg-menu">Avatar <select aria-label="Avatar" data-avatar="2"><option value="amara">Amara</option><option value="arthur">Arthur</option><option value="elena">Elena</option></select></span>
+     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option>BSL</option><option>Auslan</option></select></span>
+     <span class="pg-menu">Background <select aria-label="Background" id="pgBg"><option value="black">Studio black</option><option value="sky">Sky blue</option><option value="grey">Warm grey</option><option value="orange">Orange tint</option></select></span>
+    </div>
+    <span class="pg-demo">Want this in your product? <a href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></span>
+   </div>
+  </div>
+ </main>
+ <input type="file" id="pgFile" accept="video/*" hidden>
+</div>
+
+<!-- Modals -->
+<div class="pg-ov" id="pgOv" role="dialog" aria-modal="true" aria-labelledby="pgMoT">
+ <div class="pg-mo" id="pgMo"></div>
+</div>
+<div class="pg-toast" id="pgToast" role="status"></div>
+
+<script>
+(function(){
+'use strict';
+var MODES=[{n:'Speech to sign',m:'Echo',c:3},{n:'Sign to speech',m:'Palm',c:3},{n:'Video to video',m:'Morph',c:4}];
+var FREE=10, KEY='ts_playground_v1';
+var TEST=/[?&]test(=|&|$)/.test(location.search);
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var COIN='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>';
+var X='<button class="pg-x" type="button" data-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>';
+
+/* ---------- state (kept in this browser) ---------- */
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+var S=load(); if(!S.status)S.status='none'; if(typeof S.credits!=='number')S.credits=0;
+var mode=0, pendingTry=null;
+
+/* ---------- header ---------- */
+function renderPill(){
+  var p=$('#pgPill'), cta=$('#pgCta');
+  if(S.status!=='verified'){p.dataset.s='free';p.innerHTML=COIN+'<b>10</b><span class="pw"> free credits</span>';p.setAttribute('aria-label','10 free credits');}
+  else if(S.credits<=0){p.dataset.s='out';p.innerHTML=COIN+'<b>0</b><span class="pw"> credits</span>';p.setAttribute('aria-label','0 credits');}
+  else{p.dataset.s=S.credits<=3?'free':'ok';var lab=S.credits+(S.credits===1?' credit':' credits')+(S.credits<=3?' left':'');p.innerHTML=COIN+'<b>'+S.credits+'</b><span class="pw">'+lab.slice(String(S.credits).length)+'</span>';p.setAttribute('aria-label',lab);}
+  var out=S.status==='verified'&&S.credits<MODES[mode].c;
+  if(false){}
+  else{cta.textContent='Get early access';cta.classList.remove('dark');cta.setAttribute('href','/waitlist');}
+  $$('.pg-try').forEach(function(b){var k=+b.dataset.try,c=MODES[k].c;
+    var buyNow=false, sp=b.querySelector('span');
+    sp.innerHTML=buyNow?'Buy credits<span class="tf"> to try</span>':'Try<span class="tf"> for</span> <span class="tc">'+c+'<span class="tf"> credits</span><span class="tm">'+COIN.replace(/16/g,'12')+'</span></span>';
+    b.classList.toggle('buy',buyNow);
+    b.setAttribute('aria-label',buyNow?'Buy credits to try':'Try for '+c+' credits');});
+}
+$('#pgPill').addEventListener('click',function(){
+  if(S.status==='none')claim(); else if(S.status==='pending')check(); else if(S.credits<MODES[mode].c)buy(); else toast(S.credits+' credits left');
+});
+$('#pgCta').addEventListener('click',function(e){if(this.getAttribute('href')==='#buy'){e.preventDefault();buy();}});
+
+/* ---------- modes ---------- */
+function setMode(k){
+  if(k!==1&&camStream)camOff();
+  mode=k; stopAll(); document.documentElement.classList.toggle('pg-m1',k===1);
+  $$('.pg-seg button').forEach(function(b){b.setAttribute('aria-selected',+b.dataset.m===k?'true':'false')});
+  $$('.pg-mode').forEach(function(m){m.hidden=+m.dataset.mode!==k});
+  renderPill();
+  try{history.replaceState(null,'',location.pathname+location.search+'#'+['speech-to-sign','sign-to-speech','video-to-video'][k])}catch(e){}
+}
+$$('.pg-seg button').forEach(function(b){b.addEventListener('click',function(){setMode(+b.dataset.m)})});
+var h=location.hash.replace('#',''); var hi=['speech-to-sign','sign-to-speech','video-to-video'].indexOf(h);
+
+/* ---------- avatars, sign language ---------- */
+function setAvatar(v,name){
+  var vid=v; vid.pause(); vid.preload='auto';
+  var A=$('.pg-brand img').getAttribute('src').replace(/[^\/]*$/,'');  /* same folder as the logo: assets/ or /assets/ */
+  vid.setAttribute('poster',A+'pg-'+name+'.jpg');
+  vid.innerHTML='<source src="'+A+'hero-'+name+'.webm" type="video/webm"><source src="'+A+'hero-'+name+'.mp4" type="video/mp4">';
+  vid.load();
+}
+$$('[data-avatar]').forEach(function(s){s.addEventListener('change',function(){
+  var k=s.dataset.avatar; if(k==='2')kx.clearRect(0,0,960,720); setAvatar($('#pgAv'+k),s.value);
+  if(k==='2')$('[data-avname]').textContent=s.options[s.selectedIndex].text;
+})});
+$$('[data-sl-select]').forEach(function(s){s.addEventListener('change',function(){
+  $$('[data-sl-select]').forEach(function(o){o.value=s.value;if(window.__pgfit)window.__pgfit(o)}); $$('[data-sl]').forEach(function(l){l.textContent=s.value});
+})});
+
+/* ---------- playback helpers ---------- */
+var timers=[];
+function play(v,card,onEnd){
+  v.currentTime=0; v.muted=true;
+  var bar=card&&card.querySelector('.pg-prog i'); if(card)card.classList.add('playing');
+  var t=setInterval(function(){if(bar&&v.duration)bar.style.width=(100*v.currentTime/v.duration)+'%'},100); timers.push(t);
+  v.onended=function(){clearInterval(t);if(card)card.classList.remove('playing');if(bar)bar.style.width='0';if(onEnd)onEnd()};
+  var p=v.play(); if(p&&p.catch)p.catch(function(){});
+}
+function stopAll(){
+  timers.forEach(clearInterval);timers=[];
+  $$('.pg video').forEach(function(v){if(!v.srcObject){v.pause();}});
+  $$('.pg-card').forEach(function(c){c.classList.remove('playing')});
+  try{speechSynthesis.cancel()}catch(e){}
+  stopRec();
+}
+
+/* ---------- mode 0: speech to sign ---------- */
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition, rec=null;
+var recT=null;
+function stopRec(){clearTimeout(recT);if(rec){var r=rec;rec=null;try{r.abort()}catch(e){}} var m=$('#pgMic');m.classList.remove('rec');m.setAttribute('aria-pressed','false');if(window.__pgph)window.__pgph();else $('#pgIn0').placeholder='Speak, or type something to sign';}
+var inp=$('#pgIn0'), big=$('#pgText');
+function setBig(t){t=(t||'').trim();big.textContent=t||'Your text will appear here';big.classList.toggle('empty',!t);}
+inp.addEventListener('input',function(){setBig(inp.value);});
+inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();tryMode(0);}});
+var prevIn='';
+function micFail(msg){stopRec();if(!inp.value&&prevIn){inp.value=prevIn;setBig(prevIn);}toast(msg);inp.focus();}
+$('#pgMic').addEventListener('click',function(){
+  if(rec){stopRec();return;}
+  if(!SR){micFail('Speech input isn’t available in this browser. Type instead.');return;}
+  rec=new SR(); rec.lang='en-US'; rec.interimResults=true; rec.continuous=false;
+  var started=false;
+  rec.onstart=function(){started=true;};
+  rec.onresult=function(e){var t='';for(var i=0;i<e.results.length;i++)t+=e.results[i][0].transcript;inp.value=t;setBig(t);};
+  rec.onerror=function(e){micFail(e.error==='not-allowed'||e.error==='service-not-allowed'?'Microphone blocked here. Allow it in your browser, or type instead.':(e.error==='no-speech'?'Didn’t hear anything. Try again or type.':'Speech input isn’t working here. Type instead.'));};
+  rec.onend=function(){if(rec)stopRec();};
+  recT=setTimeout(function(){if(rec&&!started)micFail('Microphone isn’t available here. Type instead.');},2500);
+  this.classList.add('rec');this.setAttribute('aria-pressed','true');prevIn=inp.value;inp.value='';inp.placeholder='Listening… press the mic again to stop';
+  try{rec.start()}catch(e){stopRec()}
+});
+function run0(){
+  var t=big.classList.contains('empty')?'':big.textContent.trim(); if(!t){toast('Type or say something first');inp.focus();return false;}
+  play($('#pgAv0'),$('#pgOut0')); return true;
+}
+
+/* ---------- mode 1: sign to speech ---------- */
+var bars=$('#pgBars'); for(var i=0;i<34;i++){var b=document.createElement('i');b.style.height=(6+((i*7)%11)*2)+'px';bars.appendChild(b);}
+var waveT=null;
+function wave(on){
+  var c=$('#pgOut1'); clearInterval(waveT);
+  if(on){c.classList.add('speaking');waveT=setInterval(function(){$$('i',bars).forEach(function(b){b.style.height=(6+Math.random()*28)+'px'})},120);}
+  else{c.classList.remove('speaking');$$('i',bars).forEach(function(b,i){b.style.height=(6+((i*7)%11)*2)+'px'});}
+}
+var SENT='Yes, at ten. I’m here to see Dr Ade.';  /* sample output for the preview clip */
+function speak(text){
+  var out=$('#pgSpoken'); out.classList.remove('empty'); out.textContent=text;
+  if(!('speechSynthesis' in window))return;
+  try{speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(text.replace('Dr ','Doctor '));
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^en/i.test(v.lang)});
+    var k=+$('#pgVoice').value; if(vs.length)u.voice=vs[Math.min(k*Math.max(1,Math.floor(vs.length/2)),vs.length-1)];
+    u.onstart=function(){wave(true)}; u.onend=u.onerror=function(){wave(false)};
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+$('#pgReplay').addEventListener('click',function(){var t=$('#pgSpoken');if(!t.classList.contains('empty'))speak(t.textContent);});
+var camStream=null, CAMON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></svg>', CAMOFF='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5M2 3l20 18"/></svg>';
+function camUI(on,label){var b=$('#pgCamBtn');b.setAttribute('aria-pressed',String(on));b.innerHTML=(on?CAMON:CAMOFF)+'<span>'+(on?'Camera on':'Camera off')+'</span>';
+  $('#pgLive').hidden=!on;$('#pgCam').classList.toggle('mirror',on);$('#pgSrcLab').textContent=label||(on?'from your camera':'sample signer');
+  $('#pgCamHint').textContent=on?'Sign, then press Try':'Turn the camera on, or upload';}
+function sampleSigner(){var v=$('#pgCam');v.srcObject=null;v.removeAttribute('src');var A=$('.pg-brand img').getAttribute('src').replace(/[^\/]*$/,'');
+  v.setAttribute('poster',A+'pg-arthur.jpg');v.innerHTML='<source src="'+A+'hero-arthur.webm" type="video/webm"><source src="'+A+'hero-arthur.mp4" type="video/mp4">';v.load();}
+function camOff(){if(camStream){camStream.getTracks().forEach(function(t){t.stop()});camStream=null;}sampleSigner();camUI(false);}
+$('#pgCamBtn').addEventListener('click',function(){
+  if(camStream){camOff();return;}
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){toast('Camera isn’t available here. Upload a video instead.');return;}
+  var b=this;b.disabled=true;
+  navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false}).then(function(st){
+    b.disabled=false;stopAll();camStream=st;var v=$('#pgCam');v.removeAttribute('poster');v.innerHTML='';v.srcObject=st;v.play();camUI(true);
+  },function(){b.disabled=false;toast('Camera blocked. Allow it in your browser, or upload a video instead.');});
+});
+function run1(){
+  var v=$('#pgCam'), out=$('#pgSpoken');
+  out.classList.add('empty'); out.textContent='Translating…';
+  if(camStream){setTimeout(function(){speak(SENT)},1400);return true;}
+  play(v,$('#pgIn1')); setTimeout(function(){speak(SENT)},1400); return true;
+}
+
+/* ---------- mode 2: video to video ---------- */
+/* Backgrounds (brand avatar backgrounds: Studio black, Sky blue, Warm grey, Orange tint). The clips are filmed on #111, so other colours are keyed out live on a canvas. */
+var BG={black:'#111111',sky:'#E8F4FF',grey:'#F3F2EF',orange:'#FFF0EA'}, bgKey='black', kc=$('#pgKey'), kx=kc.getContext('2d',{willReadFrequently:true}), kv=$('#pgAv2'), kRaf=0;
+function keyFrame(){
+  if(bgKey==='black'||kv.readyState<2)return;
+  try{kx.clearRect(0,0,960,720);kx.drawImage(kv,0,0,960,720);var im=kx.getImageData(0,0,960,720),d=im.data;
+    for(var i=0;i<d.length;i+=4){var m=Math.max(Math.abs(d[i]-17),Math.abs(d[i+1]-17),Math.abs(d[i+2]-17));
+      if(m<=3)d[i+3]=0;else if(m<10)d[i+3]=Math.round(255*(m-3)/7);}
+    kx.putImageData(im,0,0);}catch(e){}
+}
+function keyTick(){keyFrame();if(!kv.paused&&!kv.ended)kRaf=requestAnimationFrame(keyTick);}
+kv.addEventListener('play',function(){cancelAnimationFrame(kRaf);keyTick();});
+['loadeddata','seeked','pause'].forEach(function(ev){kv.addEventListener(ev,keyFrame);});
+$('#pgBg').addEventListener('change',function(){
+  bgKey=this.value; $('#pgOut2').style.background=BG[bgKey];
+  var light=bgKey!=='black'; kc.hidden=!light; kv.style.visibility=light?'hidden':'';
+  $('#pgOut2').querySelector('.pg-lab').style.color=light?'var(--ink2)':'';
+  $('#pgOut2').querySelector('.pg-prog').style.background=light?'rgba(0,0,0,.12)':'';
+  $('#pgOut2').querySelector('.pg-prog i').style.background=light?'var(--ink)':'';
+  if(light){if(kv.readyState<2){kv.preload='auto';kv.load();}else keyFrame();}
+});
+function run2(){play($('#pgSrc2'),$('#pgIn2'));play($('#pgAv2'),$('#pgOut2'));return true;}
+
+/* ---------- uploads ---------- */
+var upTarget=0;
+$$('[data-upload]').forEach(function(b){b.addEventListener('click',function(){upTarget=+b.dataset.upload;$('#pgFile').click()})});
+$('#pgFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0]; if(!f)return;
+  if(f.size>100*1024*1024){toast('That video is over 100 MB. Try a shorter one.');return;}
+  var url=URL.createObjectURL(f), v=upTarget===1?$('#pgCam'):$('#pgSrc2');
+  if(upTarget===1){if(camStream){camStream.getTracks().forEach(function(t){t.stop()});camStream=null;}v.srcObject=null;camUI(false,'your video');}
+  v.removeAttribute('poster'); v.innerHTML=''; v.src=url; v.load();
+  (upTarget===1?$('#pgCamHint'):$('#pgUpHint2')).textContent=f.name;
+  this.value='';
+});
+
+/* ---------- Try: credits gate ---------- */
+var RUN=[run0,run1,run2];
+$$('.pg-try').forEach(function(b){b.addEventListener('click',function(){tryMode(+b.dataset.try)})});
+function tryMode(k){
+  if(k===0&&big.classList.contains('empty')){toast('Type or say something first');inp.focus();return;}
+  if(S.status==='none'){pendingTry=k;claim();return;}
+  if(S.status==='pending'){pendingTry=k;check();return;}
+  var c=MODES[k].c;
+  if(S.credits<c){buy();return;}
+  stopAll();
+  if(RUN[k]()===false)return;
+  S.credits-=c; save(); renderPill();
+  toast(c+' credits used · '+S.credits+' left');
+}
+
+/* ---------- modals ---------- */
+var ov=$('#pgOv'), mo=$('#pgMo'), lastFocus=null;
+function openM(html){lastFocus=document.activeElement;mo.innerHTML=X+html;ov.classList.add('on');var f=mo.querySelector('input,button.pg-big,button:not(.pg-x)');(f||mo).focus();}
+function closeM(){ov.classList.remove('on');mo.innerHTML='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+ov.addEventListener('click',function(e){if(e.target===ov||e.target.closest('[data-close]'))closeM();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('on'))closeM();});
+function costs(){return '<div class="pg-costs">'+MODES.map(function(m){return '<div><span>'+m.n+'</span><span>'+m.c+' credits a try</span></div>'}).join('')+'</div>';}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+function claim(){
+  openM('<span class="pg-mi" style="background:var(--orange-bg);color:var(--orange-ink)">'+COIN.replace(/16/g,'30')+'</span>'
+   +'<h2 id="pgMoT">Get 10 free credits</h2><p>Enter your email and we’ll send you a link. Confirm it to unlock your credits.</p>'+costs()
+   +'<form id="pgClaim" novalidate style="display:flex;flex-direction:column;gap:14px"><div class="pg-field"><label for="pgEmail">Email</label><input id="pgEmail" type="email" autocomplete="email" required placeholder="you@company.com" value="'+esc(S.email||'')+'"><span class="pg-err" id="pgErr"></span></div>'
+   +'<button class="pg-big" type="submit">Send my link</button></form>'
+   +'<p class="pg-fine">One set of free credits per email. By continuing you agree to our <a href="/legal/terms" style="text-decoration:underline">Terms</a> and <a href="/legal/privacy" style="text-decoration:underline">Privacy Policy</a>.</p>');
+  $('#pgClaim').addEventListener('submit',function(e){
+    e.preventDefault(); var em=$('#pgEmail').value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('#pgErr').textContent='Enter a valid email address.';$('#pgEmail').focus();return;}
+    var btn=this.querySelector('button');btn.disabled=true;btn.textContent='Sending…';
+    send({type:'Playground',email:em,source:'Playground credits'});  /* fire and forget: never block the visitor on the network */
+    S.email=em;S.status='pending';S.sentAt=Date.now();save();renderPill();setTimeout(check,250);
+  });
+}
+function check(){
+  openM('<span class="pg-mi" style="background:var(--fill)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>'
+   +'<h2 id="pgMoT">Check your email</h2><p>We sent a link to <b style="color:var(--ink);font-weight:500">'+esc(S.email||'')+'</b>. Open it on any device to confirm your email and unlock 10 credits. This page updates on its own.</p>'
+   +'<div class="pg-wait"><span class="pg-spin"></span>Waiting for confirmation</div>'
+   +'<div class="pg-links"><button class="o" type="button" id="pgResend">Resend link</button><button type="button" id="pgOther">Use a different email</button></div>'
+   +(TEST?'<p class="pg-fine" style="color:#6B4E00!important;background:#FFF8E1;border-radius:10px;padding:8px">Test build: the email link isn’t wired yet. <button type="button" id="pgSim" style="text-decoration:underline;color:#6B4E00">Confirm now</button></p>':''));
+  $('#pgResend').addEventListener('click',function(){send({type:'Playground',email:S.email,source:'Playground credits (resend)'});toast('Link sent again');});
+  $('#pgOther').addEventListener('click',function(){S.status='none';save();renderPill();claim();});
+  var sim=$('#pgSim'); if(sim)sim.addEventListener('click',verified);
+}
+function verified(){
+  if(S.status!=='verified'){S.status='verified';S.credits=FREE;save();}
+  renderPill();
+  openM('<span class="pg-mi" style="background:#1F9D55;color:#fff"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>'
+   +'<h2 id="pgMoT">10 credits added</h2><p>Your email is confirmed. That’s enough to try every mode once.</p>'+costs()
+   +'<button class="pg-big" type="button" id="pgStart">Start playing</button>');
+  $('#pgStart').addEventListener('click',function(){closeM();if(pendingTry!==null){var k=pendingTry;pendingTry=null;setMode(k);tryMode(k);}});
+}
+/* Out of credits (Eddy, 6 Nov: no top-up screen; point to early access and a demo instead) */
+function buy(){
+  var some=S.credits>0;
+  openM('<span class="pg-mi" style="background:var(--orange-bg);color:var(--orange-ink)">'+COIN.replace(/16/g,'30')+'</span>'
+   +'<h2 id="pgMoT">'+(some?'Not enough credits':'You’ve used your free credits')+'</h2>'
+   +'<p>'+(some?'You have '+S.credits+' left; '+MODES[mode].n.toLowerCase()+' needs '+MODES[mode].c+'. ':'')+'Thanks for trying Talksign. Get early access to keep building with us, or book a demo to see more.</p>'
+   +'<a class="pg-big" href="/waitlist">Get early access</a>'
+   +'<div class="pg-links"><button type="button" data-close>Maybe later</button><a class="o" style="color:var(--orange-ink);font-weight:500" href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></div>'
+   +(TEST?'<p class="pg-fine" style="color:#6B4E00!important;background:#FFF8E1;border-radius:10px;padding:8px">Test build: <button type="button" id="pgTopTest" style="text-decoration:underline;color:#6B4E00">add 10 test credits</button></p>':''));
+  var tt=$('#pgTopTest'); if(tt)tt.addEventListener('click',function(){S.credits+=10;save();renderPill();closeM();toast('10 test credits added');});
+}
+
+/* ---------- sheet (same endpoint as the site forms) ---------- */
+function send(data){
+  var url=window.TALKSIGN_SHEET_ENDPOINT||''; data.website='';
+  if(!/^https:\/\/script\.google\.com\//.test(url))return Promise.resolve(false);
+  try{return fetch(url,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(function(){return true},function(){return true});}catch(e){return Promise.resolve(false);}
+}
+
+/* ---------- toast ---------- */
+var tt=null;
+function toast(t){var el=$('#pgToast');el.innerHTML=COIN+esc(t);el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on')},2600);}
+
+/* ---------- confirmation link: /playground?confirmed=1 (and other tabs update on their own) ---------- */
+window.addEventListener('storage',function(e){if(e.key===KEY){var was=S.status;S=load();renderPill();if(was!=='verified'&&S.status==='verified'&&ov.classList.contains('on'))verified();}});
+if(/[?&]confirmed=/.test(location.search)&&S.status!=='verified'){S.status='verified';S.credits=FREE;save();setTimeout(verified,50);}
+
+/* ---------- test helper ---------- */
+(function(){var tb=$('#pgTest'),chip=$('#pgChip');
+  chip.addEventListener('click',function(e){e.stopPropagation();tb.hidden=!tb.hidden;chip.setAttribute('aria-expanded',String(!tb.hidden));});
+  document.addEventListener('click',function(e){if(!tb.hidden&&!tb.contains(e.target)){tb.hidden=true;chip.setAttribute('aria-expanded','false');}});
+  tb.innerHTML='<b>Beta.</b> The Playground is in beta. Outputs are sample clips while we connect the live models. Your credits are saved in this browser.';})();
+
+/* menus size to the chosen option, not the longest one (e.g. "coming soon") */
+var meas=document.createElement('span');meas.style.cssText='position:fixed;top:0;left:-9999px;visibility:hidden;white-space:pre;font:500 14px Figtree,-apple-system,Arial,sans-serif';document.body.appendChild(meas);
+function fit(sel){meas.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';sel.style.width=(Math.ceil(meas.getBoundingClientRect().width)+18)+'px';}
+window.__pgfit=fit;
+$$('.pg-menu select').forEach(function(sel){fit(sel);sel.addEventListener('change',function(){fit(sel)});});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){$$('.pg-menu select').forEach(fit)});
+setMode(hi>=0?hi:0);
+renderPill();
+window.addEventListener('hashchange',function(){var i=['speech-to-sign','sign-to-speech','video-to-video'].indexOf(location.hash.replace('#',''));if(i>=0&&i!==mode)setMode(i);});
+(function(){var mq=window.matchMedia('(max-width:520px)');function ph(){if(!rec)inp.placeholder=mq.matches?'Type…':'Speak, or type something to sign';}ph();mq.addEventListener?mq.addEventListener('change',ph):mq.addListener(ph);window.__pgph=ph;})();
+})();
+</script>
+<!--PG-END-->
+</body>
+</html>
