@@ -3513,6 +3513,7 @@ function sendToSheet(data){
   var url=window.TALKSIGN_SHEET_ENDPOINT||'';
   if(!url||!/^https:\/\/script\.google\.com\//.test(url))return Promise.resolve(false);
   data.website='';
+  try{data.elapsed=String(Math.round(performance.now()));}catch(e){}
   try{
     return fetch(url,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(function(){return true;},function(){return false;});
   }catch(e){return Promise.resolve(false);}

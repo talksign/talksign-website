@@ -569,8 +569,17 @@ function claim(){
     e.preventDefault(); var em=$('#pgEmail').value.trim();
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('#pgErr').textContent='Enter a valid email address.';$('#pgEmail').focus();return;}
     var btn=this.querySelector('button');btn.disabled=true;btn.textContent='Sending…';
-    send({type:'Playground',email:em,source:'Playground credits'});  /* fire and forget: never block the visitor on the network */
-    S.email=em;S.status='pending';S.sentAt=Date.now();save();renderPill();setTimeout(check,250);
+    /* One set of free credits per email: the sheet says if this email is already in the Playground tab (Eddy, 6 Nov).
+       If the sheet can't be reached in 8 seconds, carry on rather than block the visitor. */
+    var done=false, form=this;
+    function go(){if(done)return;done=true;S.email=em;S.status='pending';S.sentAt=Date.now();save();renderPill();setTimeout(check,150);}
+    claimCheck({type:'Playground',email:em,page:'/playground'}).then(function(r){
+      if(done)return;
+      if(r&&r.error==='disposable'){done=true;btn.disabled=false;btn.textContent='Send my link';$('#pgErr').textContent='Please use your work or personal email, not a temporary one.';$('#pgEmail').focus();return;}
+      if(r&&r.duplicate){done=true;btn.disabled=false;btn.textContent='Send my link';$('#pgErr').textContent='This email has already been used for free credits. Try a different one.';$('#pgEmail').focus();return;}
+      go();
+    });
+    setTimeout(go,8000);
   });
 }
 function check(){
@@ -608,6 +617,14 @@ function send(data){
   var url=window.TALKSIGN_SHEET_ENDPOINT||''; data.website='';
   if(!/^https:\/\/script\.google\.com\//.test(url))return Promise.resolve(false);
   try{return fetch(url,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(function(){return true},function(){return true});}catch(e){return Promise.resolve(false);}
+}
+
+/* Same endpoint, but reads the reply so we can tell if the email was already used */
+function claimCheck(data){
+  var url=window.TALKSIGN_SHEET_ENDPOINT||''; data.website=''; try{data.elapsed=String(Math.round(performance.now()));}catch(e){}
+  if(!/^https:\/\/script\.google\.com\//.test(url))return Promise.resolve(null);
+  try{return fetch(url,{method:'POST',body:new URLSearchParams(data)}).then(function(r){return r.json()}).catch(function(){return null});}
+  catch(e){return Promise.resolve(null);}
 }
 
 /* ---------- toast ---------- */
