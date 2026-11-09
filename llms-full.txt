@@ -86,7 +86,7 @@ Today we're launching the Talksign Marketplace, a place where Deaf communities, 
  The Marketplace is now live. If you hold sign language data and want to list it, if you're a signer or organisation interested in contributing or annotating, or if you're building something that needs licensed multimodal sign data, we'd like to hear from you. You can sign up on the Talksign Marketplace or reach us directly at sales@talksign.co .
  You can also read more about the models this work supports in our write-up of Palm and Echo , or book a demo .
 
-## Palm 1.0 and Echo 1.0: Real-time sign language AI and photorealistic avatars that understand context, not just gestures
+## Introducing Palm 1.0 and Echo 1.0
 URL: https://www.talksign.co/blog/palm-and-echo
 Published: 22 May 2026 | Category: Research | Author: Edidiong Ekong, CEO and Founder of Talksign
 
@@ -116,7 +116,7 @@ Today, we are announcing the release of two new flagship models: Palm 1.0 and Ec
  This matters because sign language is not a sequence of isolated gestures. A hand shape means one thing in one context and something entirely different when paired with a particular head position or shoulder movement. SAGE captures those relationships in real time and passes that structural understanding to the decoder, so Palm 1.0 can read signing the way it is actually produced: as a continuous, contextual conversation.
  Echo 1.0: a Photorealistic Aperture Model for Sign Language
  Echo 1.0 is Talksign’s end-to-end pipeline for converting spoken or written language into photorealistic American Sign Language video at 30 frames per second. A person speaks or types, and Echo 1.0 outputs a high-fidelity digital human signing the equivalent message fluently and accurately.
- See the photorealistic avatar here: Talksign Photorealistic Avatars 
+ Talksign photorealistic avatars, signing with Echo 1.0.
  Trained At Scale Echo 1.0 was trained on 94,410 ASL sentence pairs over 15 epochs, producing a translation engine fluent in the syntax, word order, and spatial grammar that make ASL its own distinct language. Echo 1.0 at a glance
  0.927 Perceptual quality SSIM, above 0.90 reads as high quality ~29 ms Translation latency Per sample, across 5,000 examples 30 FPS Real-time video Photorealistic avatar output Visual quality that disappears into the signing
  Echo 1.0 achieves a Structural Similarity Index (SSIM) of 0.927 and a Peak Signal-to-Noise Ratio of 29.5 dB on photorealistic rendering. An SSIM above 0.90 is widely accepted as indicating perceptually high quality. In practical terms, it means viewers stop noticing the rendering and focus on the signing itself, which is the only metric of visual quality that ultimately matters for accessibility. A complementary LPIPS perceptual loss score of 0.081 confirms that human viewers perceive the generated video as visually authentic rather than an obviously synthesized avatar.
