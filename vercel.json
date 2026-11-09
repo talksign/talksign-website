@@ -7,6 +7,13 @@
       "destination": "/legal/index.html"
     }
   ],
+  "redirects": [
+    {
+      "source": "/blog/palm-and-echo",
+      "destination": "/blog/introducing-palm-1-0",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

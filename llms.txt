@@ -25,7 +25,8 @@ A marketplace for sign language data. People fluent in sign language earn by rec
 ## Insights (articles)
 - [Why Captions Aren't Enough for Deaf People](https://www.talksign.co/blog/why-captions-arent-enough) (3 Sep 2026, Community): We often think language is just words. But for Deaf people, communication is much more than that. AI needs to understand this difference to truly help everyone.
 - [Introducing the Talksign Marketplace](https://www.talksign.co/blog/introducing-the-talksign-marketplace) (25 Aug 2026, Product): A marketplace for licensable multimodal sign language datasets.
-- [Introducing Palm 1.0 and Echo 1.0](https://www.talksign.co/blog/palm-and-echo) (22 May 2026, Research): Palm 1.0 and Echo 1.0 set a new global standard for real-time sign language translation with 84% semantic accuracy, delivering human-competitive accuracy and opening the door to a truly inclusive future.
+- [Introducing Palm 1.0](https://www.talksign.co/blog/introducing-palm-1-0) (22 May 2026, Research): Palm 1.0 reads continuous ASL signing and turns it into English text and speech, clearing the production threshold for translation quality.
+- [Introducing Echo 1.0](https://www.talksign.co/blog/introducing-echo-1-0) (22 May 2026, Research): Echo 1.0 turns spoken or written English into photorealistic ASL video at 30 frames per second, signed by a digital human you can choose.
 - [Introducing Talksign-1](https://www.talksign.co/blog/introducing-talksign-1) (16 Feb 2026, Research): Breaking down communication barriers with our first-generation AI model for real-time Sign Language recognition
 
 Full text of every article: https://www.talksign.co/llms-full.txt
