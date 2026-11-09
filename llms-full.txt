@@ -113,21 +113,12 @@ Today we're announcing Palm 1.0 , the Pose-Aligned Language Model, Talksign's si
  Kazi Mahathir Rahman, co-founder and CTO, Talksign
  What Palm sees
  Palm reads 133 landmarks in every frame. Most of them are on the face and hands, because that's where most of the meaning in sign language sits.
- Region Landmarks 
- Face 68 
- Left hand 21 
- Right hand 21 
- Body 17 
- Feet 6 
- Total 133 
- Each landmark's position is normalised before Palm reads it, so the model doesn't depend on how close the signer stands to the camera or how the shot is framed.
+ What Palm sees: 133 landmarks in every frame
+ 68 Face Expression, mouth and eyes, where much of the meaning sits 21 Left hand Every finger joint 21 Right hand Every finger joint 17 Body Shoulders, arms and torso 6 Feet Stance 133 Total Landmarks read in every frame Each landmark's position is normalised before Palm reads it, so the model doesn't depend on how close the signer stands to the camera or how the shot is framed.
  Palm 1.0 at a glance
  Palm 1.0 clears the target we set for every core translation measure, including the 30% BLEU-4 mark generally treated as production-ready.
- Measure What it tells you Target Palm 1.0 
- ROUGE ↑ How much of the reference sentence Palm reproduces, in the right order 75% 84.2% 
- BLEU-1 ↑ How many of Palm's words match the reference translation 70% 79.6% 
- BLEU-4 ↑ How many four-word phrases match, the strictest standard measure 30% 36.6% 
- 84.2% ROUGE: the sentence comes through
+ Palm 1.0 against the targets for production translation
+ Semantic accuracy ROUGE, higher is better Target 75% 84.2% Word-level accuracy BLEU-1, higher is better Target 70% 79.6% Phrase accuracy BLEU-4, higher is better Production-ready 30% 36.6% Target for each metric 84.2% ROUGE: the sentence comes through
  ROUGE looks at the longest run of words Palm's translation shares with a reference translation, in order. A score of 84.2% means most of what the signer said comes through in the right sequence: the subject, the action and the context, even when Palm's exact wording differs.
  79.6% BLEU-1: the right words
  At the word level, Palm 1.0 scores 79.6% on BLEU-1. Almost four in five words Palm produces match the reference translation, for a visual, spatial language that has had a fraction of the data spoken languages have.
@@ -135,7 +126,6 @@ Today we're announcing Palm 1.0 , the Pose-Aligned Language Model, Talksign's si
  BLEU-4 is the strictest standard in translation evaluation, because it only counts exact matches of four words in a row. Machine translation systems for spoken languages are generally considered production-ready above 30% BLEU-4. Palm 1.0 clears that threshold by 6.6 points.
  These are automatic measures. The real test is whether Deaf signers are understood by the people they're talking to, which is why we test Palm with Deaf users and keep improving it with their feedback.
  How Palm learned
- Source: Palm 1.0 technical documentation · training run, epochs 0 to 9
  Palm 1.0 trained for 10 passes over its data, starting from an earlier Palm checkpoint. Its loss on unseen test signing fell alongside its training loss and finished slightly below it, a good sign that Palm generalises to signing it hasn't seen rather than memorising its training set. The biggest step came in the final epochs, when the model's translations started matching whole phrases, not just single words.
  Built with the Deaf community
  Technology that serves the Deaf community has to be built with the Deaf community. Palm 1.0 was trained on the natural variation of real human signing, not a synthetic approximation, and we'll keep working with Deaf advocates, linguists and users so Palm improves in the ways that matter most to the people it serves. Palm is built for everyday conversations when an interpreter isn't there; for legal, medical or emergency settings, a qualified interpreter should still be used.
@@ -187,33 +177,20 @@ Today we're announcing Echo 1.0 , Talksign's speech-to-sign model. A person spea
  Each stage of Echo 1.0 can be improved or replaced on its own. As speech recognition, translation and rendering each advance, Echo improves with them, without retraining the whole system.
  Echo 1.0 at a glance
  Echo 1.0 renders signing at an SSIM of 0.927, above the 0.90 mark widely read as high visual quality, and translates a sentence in about 29 milliseconds.
- Measure What it tells you Echo 1.0 
- SSIM ↑ How closely the rendered video matches real footage in structure (above 0.90 reads as high quality) 0.927 
- PSNR ↑ How cleanly each frame is reproduced, pixel by pixel 29.5 dB 
- LPIPS ↓ How different the video looks to a perceptual model trained on human judgements 0.081 
- Translation time English sentence to ASL gloss, averaged across 5,000 examples ~29 ms 
- Video output Frames per second from the photorealistic avatar 30 FPS 
- Training data English and ASL sentence pairs for the translation stage 94,410 
- Visual quality that disappears into the signing
+ Echo 1.0 at a glance
+ 0.927 Perceptual quality SSIM, higher is better. Above 0.90 reads as high quality 29.5 dB Image fidelity PSNR, higher is better. How cleanly each frame is reproduced 0.081 Perceptual realism LPIPS, lower is better. How real it looks to a model trained on human judgements ~29 ms Translation time English sentence to ASL gloss, across 5,000 examples 30 FPS Video output From the photorealistic avatar 94,410 Training data English and ASL sentence pairs Visual quality that disappears into the signing
  In practical terms, an SSIM of 0.927 and a PSNR of 29.5 dB mean viewers stop noticing the rendering and focus on the signing itself. For accessibility, that's the measure of visual quality that matters. The low LPIPS score of 0.081 points the same way: the video reads as a person signing, not an obviously synthetic avatar.
  Translation in under 30 milliseconds
  Echo's translation stage converts English into ASL gloss in about 29 milliseconds per sentence, measured across 5,000 validation examples. That's well below the delay people notice in conversation, so translation never becomes the bottleneck. Rendering the signed video then runs at 30 frames per second.
  Under the hood
  How the signer moves
  Echo's motion comes from fluent signing, converted into a 3D model of the whole body. Every frame records the body's pose and proportions, the joints of every finger on both hands, and the face, so meaning carried by the face comes through as well as meaning carried by the hands.
- Part of the signing What Echo captures in each frame 
- Body Full-body pose and proportions 
- Hands Joint rotations for every finger, on both hands 
- Face 50 expression values, covering facial expression and lip movement 
- When two signs follow each other, Echo blends the motion between them. A neural renderer then draws the digital human for each frame and refines it to a photorealistic image.
+ What Echo captures in each frame
+ Body Pose and proportions Full-body pose in every frame Hands Every finger joint Joint rotations on both hands Face 50 expression values Facial expression and lip movement When two signs follow each other, Echo blends the motion between them. A neural renderer then draws the digital human for each frame and refines it to a photorealistic image.
  How the renderer learned
- Source: Echo 1.0 technical documentation · rendering training, first and last logged steps
  The renderer is trained with separate checks on the whole frame and on close-ups of the face and hands, because those close-ups carry most of the meaning in sign language. Over training, errors on the hand and face close-ups fell by about 40%. The perceptual measure, which tracks how real the video looks overall, held steady, and it's the main target for the larger renderer on our roadmap.
- Point in training PSNR ↑ SSIM ↑ 
- Final 29.46 dB 0.927 
- Three quarters through 29.06 dB 0.920 
- Halfway 28.66 dB 0.913 
- Visual quality kept improving right up to the final version of the model.
+ Rendering quality during training
+ 0.913 Halfway SSIM, with PSNR at 28.66 dB 0.920 Three quarters through SSIM, with PSNR at 29.06 dB 0.927 Final SSIM, with PSNR at 29.46 dB Visual quality kept improving right up to the final version of the model.
  Built with the Deaf community
  Technology that serves the Deaf community has to be built with the Deaf community. Echo 1.0's motion dictionary was reviewed with Deaf advisors, and we'll keep working with Deaf advocates, linguists and users so Echo improves in the ways that matter most to the people it serves. Echo is built for everyday conversations when an interpreter isn't there; for legal, medical or emergency settings, a qualified interpreter should still be used.
  Known limitations of Echo 1.0
