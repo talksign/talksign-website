@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talksign Palm | Sign-to-speech model</title>
+<meta name="description" content="Palm reads continuous ASL signing and turns it into English text and speech, clearing the production threshold for translation quality.">
+<link rel="canonical" href="https://www.talksign.co/models/palm">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talksign Palm">
+<meta property="og:description" content="Palm reads continuous ASL signing and turns it into English text and speech, clearing the production threshold for translation quality.">
+<meta property="og:url" content="https://www.talksign.co/models/palm">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#FFFFFF">
+<!-- Google Analytics 4 with a consent banner (Eddy, 4 Nov 2026). GA loads only after "Accept analytics". Banner wording approved 2 Nov 2026. -->
+<style>
+#ts-ck{position:fixed;left:24px;bottom:24px;z-index:2147483000;width:400px;max-width:calc(100vw - 32px);box-sizing:border-box;background:#fff;color:#252525;border:1px solid rgba(37,37,37,.1);border-radius:20px;box-shadow:0 12px 40px rgba(37,37,37,.14);padding:22px 22px 20px;font-family:Figtree,system-ui,-apple-system,Segoe UI,Arial,sans-serif;opacity:0;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease}
+#ts-ck.on{opacity:1;transform:none}
+#ts-ck h2{margin:0 0 8px;font-size:17px;line-height:1.3;font-weight:500;color:#000;letter-spacing:-.01em}
+#ts-ck p{margin:0 0 16px;font-size:14px;line-height:1.5;color:#555}
+#ts-ck .ck-row{display:flex;gap:8px}
+#ts-ck button{flex:1;appearance:none;border:0;border-radius:999px;padding:12px 14px;font:500 15px/1 Figtree,system-ui,sans-serif;cursor:pointer;transition:transform .1s ease;white-space:nowrap}
+#ts-ck button:active{transform:scale(.97)}
+#ts-ck .ck-a{background:#252525;color:#fff}
+#ts-ck .ck-r{background:#252525;color:#fff}
+#ts-ck a{display:inline-block;margin-top:12px;font-size:13px;color:#555;text-decoration:underline;text-underline-offset:2px}
+#ts-ck button:focus-visible,#ts-ck a:focus-visible{outline:2px solid #FF5500;outline-offset:2px}
+@media (max-width:480px){#ts-ck{left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:20px 18px 18px}#ts-ck button{font-size:14px;padding:12px 10px}}
+.ts-ck-link{appearance:none;background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--ink-secondary,#6b6b6b);cursor:pointer;text-decoration:none}
+.ts-ck-link:hover{color:var(--ink,#252525)}
+</style>
+<script>
+(function(){
+  var GA='G-99217B0ZBR',KEY='ts-analytics-consent',loaded=false;
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments);};
+  function load(){if(loaded)return;loaded=true;gtag('js',new Date());gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('config',GA,{anonymize_ip:true});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);}
+  function clearGA(){var h=location.hostname.replace(/^www\./,'');document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(/^_ga/.test(n)){['', ';domain=.'+h,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
+  function close(b){b.classList.remove('on');setTimeout(function(){b.remove();},300);}
+  function banner(){if(document.getElementById('ts-ck'))return;var b=document.createElement('div');b.id='ts-ck';b.setAttribute('role','dialog');b.setAttribute('aria-live','polite');b.setAttribute('aria-label','Cookies on Talksign');
+    b.innerHTML='<h2>Cookies on Talksign</h2><p>We use essential cookies to make this site work. With your permission, we’d also like to use analytics cookies to see how people use the site so we can improve it.</p><div class="ck-row"><button type="button" class="ck-a">Accept analytics</button><button type="button" class="ck-r">Reject analytics</button></div><a href="#legal/cookies">Cookie Policy</a>';
+    document.body.appendChild(b);requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('on');});});
+    b.querySelector('.ck-a').onclick=function(){set('granted');load();close(b);};
+    b.querySelector('.ck-r').onclick=function(){var was=get()==='granted';set('denied');clearGA();close(b);if(was&&loaded)location.reload();};
+    b.querySelector('a').addEventListener('click',function(){close(b);});}
+  window.tsCookieSettings=banner;
+  function footerLink(){[].forEach.call(document.querySelectorAll('footer a[href="#legal/accessibility"],footer a[href="/legal/accessibility"]'),function(a){if(a.parentNode.querySelector('.ts-ck-link'))return;var x=document.createElement('button');x.type='button';x.className='ts-ck-link';x.textContent='Cookie settings';x.onclick=function(e){e.preventDefault();e.stopPropagation();banner();};a.parentNode.insertBefore(x,a.nextSibling);});}
+  var c=get();if(c==='granted')load();
+  function ready(){footerLink();if(!get())setTimeout(banner,600);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#252525;--black:#000;--muted:#6b6b6b;--body:#454545;--line:#E4E2DD;--line2:#EDEBE7;--paper:#F3F2EF;--tint:#FFF4EE;--tint-line:#F6DCCD;--orange:#FF5500;--orange-ink:#A83500;--peach:#FFE9DF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:Figtree,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px}.skip:focus{left:16px;z-index:20;background:#fff;padding:8px 12px}
+/* header */
+.hd{position:sticky;top:0;z-index:10;height:88px;padding:0 78px;display:flex;align-items:center;gap:24px;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.hd .lg{display:flex}
+.hd nav{margin-left:auto;display:flex;gap:36px}
+.hd nav a{text-decoration:none;font-size:17px;font-weight:500}
+.hd nav a[aria-current]{color:#C73E00}
+.hd .cta{display:flex;gap:12px}
+.pill{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;border-radius:999px;font-size:16px;font-weight:500;text-decoration:none;white-space:nowrap}
+.pri{background:var(--orange);color:#fff}.pri:hover{background:#E64D00}
+.sec{background:var(--peach);color:var(--orange-ink);box-shadow:inset 0 0 0 1px rgba(255,85,0,.28)}
+.menu{display:none}
+/* layout */
+.col{width:min(760px,100% - 32px);margin:0 auto}
+.hero{padding:120px 16px 40px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.hero .tt{display:flex;align-items:center;gap:18px}
+h1{margin:0;font-size:96px;line-height:1.04;font-weight:500;letter-spacing:-0.05em;color:var(--black)}
+.sub{margin:0;max-width:560px;font-size:21px;line-height:1.5;color:#555}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+section.s{padding:72px 0 0;display:flex;flex-direction:column;gap:20px}
+h2{margin:0;font-size:40px;line-height:1.12;font-weight:500;letter-spacing:-0.03em;color:var(--black)}
+h3{margin:0;font-size:22px;line-height:1.2;font-weight:500;letter-spacing:-0.02em;color:var(--black)}
+p{margin:0;font-size:18px;line-height:1.6;color:var(--body)}
+p a{color:var(--orange-ink);text-underline-offset:3px}
+.sb{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;background:var(--paper);color:var(--ink);font-size:14px;font-weight:500;text-decoration:none;align-self:flex-start}
+.sb:hover{background:#E9E7E2}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+/* announcements */
+.ann{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--paper);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.card p{font-size:16px;line-height:1.55;flex:1}
+.card .sb{background:#fff}
+.meta{display:flex;align-items:center;gap:10px;min-height:26px;font-size:14px;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.04em}
+.tag.new{background:#000;color:#fff}.tag.soon{background:var(--peach);color:var(--orange-ink)}
+/* use cases */
+.uses{display:grid;grid-template-columns:1fr 1fr;gap:36px 40px;padding-top:12px}
+.uc{display:flex;flex-direction:column;gap:8px}
+.uc .n{font-size:14px;font-weight:600;color:var(--muted)}
+.uc p{font-size:16px}
+/* benchmark tables (spec sheet) */
+.bench{border-radius:24px;box-shadow:inset 0 0 0 1px var(--line);padding:24px 22px;display:flex;flex-direction:column;gap:28px}
+.bench hr{border:0;height:1px;background:var(--line2);margin:0}
+.tb-h{font-size:14px;color:var(--muted);margin:0 0 4px}.tb-h b{font-size:17px;font-weight:500;color:var(--black);margin-right:6px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:separate;border-spacing:0;min-width:560px}
+th,td{text-align:center;padding:14px 6px;vertical-align:middle}
+thead th{padding:14px 6px 10px;font-weight:400;vertical-align:bottom}
+th b{display:block;font-size:15px;font-weight:500;color:var(--black)}
+th span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+tbody th{text-align:left;padding-left:0;width:150px}
+thead th b{white-space:nowrap}
+@media (max-width:820px){tbody th,thead td{position:sticky;left:0;z-index:1;background:#fff;width:112px;min-width:112px;padding-right:10px}table{min-width:520px}}
+tbody th,tbody td{border-top:1px solid var(--line)}
+td{font-size:17px;color:var(--body);font-variant-numeric:tabular-nums}
+.us{background:var(--tint)}
+thead th.us{border-radius:14px 14px 0 0}
+tbody td.us{font-size:20px;font-weight:600;color:var(--black);border-top-color:var(--tint-line)}
+tbody tr:last-child td.us{border-radius:0 0 14px 14px}
+.note{border-radius:18px;background:var(--paper);padding:18px 22px;font-size:16px}
+.note b{color:var(--black);font-weight:600}
+.small{font-size:14px;color:var(--muted)}
+/* faq */
+details{border-top:1px solid var(--line2)}
+details:last-child{border-bottom:1px solid var(--line2)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0}
+summary::-webkit-details-marker{display:none}
+.pm{position:relative;width:16px;height:16px;flex:none}
+.pm::before,.pm::after{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--ink);border-radius:1px}
+.pm::after{transform:rotate(90deg);transition:transform .2s}
+details[open] .pm::after{transform:rotate(0)}
+details p{padding:0 0 24px}
+/* closing + footer */
+.end{padding:140px 16px 120px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:32px}
+.end h2{font-size:84px;line-height:.98;letter-spacing:-0.05em;max-width:900px}
+.end .row{justify-content:center;align-items:center}
+.end .lnk{font-size:16px;font-weight:500;text-underline-offset:4px}
+footer{padding:48px 78px 40px;border-top:1px solid var(--line2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+footer nav{display:flex;gap:28px;flex-wrap:wrap}
+footer a{text-decoration:none;font-size:15px}
+footer small{font-size:13px;color:var(--muted);width:100%}
+/* tablet */
+@media (max-width:1100px){
+ .hd{padding:0 32px}.hd nav{gap:24px}
+ footer{padding:40px 32px}
+}
+/* phone */
+@media (max-width:820px){
+ .hd{height:68px;padding:0 16px}
+ .hd nav,.hd .cta .sec{display:none}
+ .hd .cta{margin-left:auto}
+ .hd .cta .pri{height:42px;padding:0 18px;font-size:15px}
+ .menu{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:0}
+ .hero{padding:56px 16px 8px;gap:18px}
+ .hero .tt{gap:10px}
+ .mk{width:44px;height:44px}
+ h1{font-size:clamp(40px,11.5vw,64px)}
+ .sub{font-size:18px}
+ .btns{width:100%;max-width:360px;flex-direction:column;flex-wrap:nowrap;gap:10px}
+ .btns .pill{width:100%;height:52px;font-size:16px}
+ section.s{padding-top:56px;gap:16px}
+ h2{font-size:32px}
+ p{font-size:17px}
+ .ann,.uses{grid-template-columns:1fr}
+ .uses{gap:28px}
+ .bench{padding:20px 16px}
+ .end{padding:96px 16px 80px}
+ .end h2{font-size:clamp(40px,11vw,56px)}
+ footer{padding:32px 16px}
+}
+
+/* Echo and Palm pages: tiles and target meters */
+.tiles{border-radius:24px;box-shadow:inset 0 0 0 1px var(--line);padding:24px 22px;display:flex;flex-direction:column;gap:16px}
+.tiles .tb-h{margin:0}
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tl{padding:20px;border-radius:18px;background:var(--paper);display:flex;flex-direction:column;gap:6px;min-width:0}
+.tl .v{font-size:34px;line-height:1;font-weight:500;letter-spacing:-0.03em;color:var(--black);font-variant-numeric:tabular-nums}
+.tl .h{font-size:15px;font-weight:500;color:var(--black);margin-top:8px}
+.tl .d{font-size:13px;line-height:1.4;color:var(--muted)}
+.meters{border-radius:24px;box-shadow:inset 0 0 0 1px var(--line);padding:26px 24px;display:flex;flex-direction:column;gap:30px}
+.mh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.mh .k{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);white-space:nowrap}
+.mh .k u,.bar u{display:block;width:3px;border-radius:2px;background:var(--black)}
+.mh .k u{height:14px}
+.mr{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:18px}
+.mr b{display:block;font-size:15px;font-weight:500;color:var(--black)}.mr span{display:block;font-size:12px;color:var(--muted)}
+.bar{position:relative;height:14px;border-radius:999px;background:var(--paper)}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:var(--orange)}
+.bar u{position:absolute;top:-7px;bottom:-7px;margin-left:-1.5px}
+.bar em{position:absolute;top:-26px;transform:translateX(-50%);font-style:normal;font-size:11px;color:var(--muted);white-space:nowrap}
+.mr .val{font-size:22px;font-weight:500;letter-spacing:-0.02em;text-align:right;color:var(--black);font-variant-numeric:tabular-nums}
+@media (max-width:820px){.tg{grid-template-columns:1fr 1fr}.mr{grid-template-columns:96px 1fr 56px;gap:12px}.tiles,.meters{padding:20px 16px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hd">
+ <a class="lg" href="https://www.talksign.co/" aria-label="Talksign home"><svg height="26" role="img" aria-label="Talksign" viewBox="104 87 764 187" fill="none" >
+<path d="M166.712 192.825C171.365 197.612 165.678 210.686 154.01 222.028C142.342 233.369 129.111 238.683 124.458 233.896C119.805 229.109 125.492 216.035 137.16 204.693C148.828 193.352 162.059 188.038 166.712 192.825Z" fill="#FF5500"/>
+<path d="M163.758 172.26C160.643 178.165 146.451 176.797 132.059 169.204C117.667 161.612 108.525 150.671 111.64 144.767C114.755 138.862 128.947 140.23 143.339 147.823C157.731 155.415 166.873 166.356 163.758 172.26Z" fill="#FF5500"/>
+<path d="M182.409 163.086C175.831 161.948 172.746 148.028 175.519 131.994C178.293 115.96 185.873 103.885 192.451 105.022C199.029 106.16 202.114 120.08 199.34 136.114C196.567 152.148 188.987 164.224 182.409 163.086Z" fill="#FF5500"/>
+<path d="M196.893 177.983C195.942 171.375 208.228 164.14 224.334 161.823C240.44 159.506 254.267 162.984 255.218 169.591C256.168 176.199 243.882 183.434 227.776 185.751C211.67 188.068 197.843 184.59 196.893 177.983Z" fill="#FF5500"/>
+<path d="M187.194 196.467C193.245 193.551 202.601 199.992 208.089 210.853C213.578 221.714 213.122 232.882 207.071 235.797C201.019 238.713 191.664 232.272 186.176 221.411C180.687 210.55 181.143 199.382 187.194 196.467Z" fill="#FF5500"/>
+<path d="M330.827 234.256C321.136 234.256 313.643 231.801 308.345 226.891C303.048 221.852 300.399 214.682 300.399 205.379V150.919H283.926V135.027H300.399V104.794H318.811V135.027H346.331V150.919H318.811V202.666C318.811 207.446 319.974 211.128 322.299 213.713C324.754 216.167 328.243 217.395 332.765 217.395C334.057 217.395 335.478 217.136 337.029 216.62C338.579 216.103 340.452 215.069 342.649 213.519L349.626 227.86C346.267 230.057 343.037 231.672 339.936 232.706C336.964 233.739 333.928 234.256 330.827 234.256Z" fill="#000000"/>
+<path d="M386.426 234.256C374.927 234.256 365.948 231.672 359.487 226.504C353.156 221.206 349.991 213.906 349.991 204.604C349.991 194.655 353.286 187.097 359.875 181.928C366.594 176.631 375.896 173.982 387.783 173.982H413.753C412.978 165.713 410.781 159.512 407.164 155.377C403.675 151.113 398.378 148.981 391.271 148.981C386.233 148.981 381.84 150.015 378.093 152.082C374.475 154.15 371.439 157.38 368.984 161.773L352.704 155.571C355.03 151.178 357.937 147.302 361.425 143.942C364.914 140.454 369.113 137.741 374.023 135.803C378.933 133.735 384.682 132.702 391.271 132.702C400.445 132.702 408.068 134.511 414.141 138.128C420.213 141.746 424.735 146.979 427.707 153.827C430.808 160.674 432.294 169.137 432.165 179.215L431.971 231.93H414.916L414.334 219.527C411.492 224.178 407.745 227.796 403.094 230.38C398.442 232.964 392.887 234.256 386.426 234.256ZM387.977 218.558C393.274 218.558 397.861 217.459 401.737 215.263C405.613 212.937 408.649 209.772 410.846 205.767C413.042 201.632 414.141 196.916 414.141 191.619V188.518H392.822C383.907 188.518 377.64 189.939 374.023 192.782C370.405 195.495 368.596 199.306 368.596 204.216C368.596 208.738 370.276 212.291 373.635 214.875C377.124 217.33 381.904 218.558 387.977 218.558Z" fill="#000000"/>
+<path d="M443.72 231.93V96.2662H462.132V231.93H443.72Z" fill="#000000"/>
+<path d="M476.001 231.93V96.2662H494.413V176.696L533.368 135.027H555.849L519.801 174.37L559.531 231.93H537.437L507.785 187.549L494.413 201.89V231.93H476.001Z" fill="#000000"/>
+<path d="M595.967 234.256C589.119 234.256 582.982 233.222 577.555 231.155C572.258 229.088 567.736 226.31 563.989 222.821C560.371 219.333 557.658 215.392 555.849 210.999L571.741 204.022C573.808 208.028 576.909 211.322 581.044 213.906C585.178 216.49 589.765 217.782 594.804 217.782C600.36 217.782 604.946 216.749 608.564 214.682C612.182 212.614 613.991 209.707 613.991 205.96C613.991 202.343 612.634 199.5 609.921 197.433C607.208 195.366 603.267 193.686 598.099 192.394L588.99 190.068C579.945 187.613 572.904 183.931 567.865 179.021C562.955 174.112 560.5 168.556 560.5 162.354C560.5 152.922 563.537 145.622 569.609 140.454C575.682 135.286 584.661 132.702 596.548 132.702C602.362 132.702 607.66 133.542 612.44 135.221C617.35 136.901 621.485 139.291 624.844 142.392C628.332 145.493 630.787 149.175 632.208 153.439L616.704 160.416C615.154 156.54 612.505 153.697 608.758 151.888C605.011 149.95 600.618 148.981 595.579 148.981C590.411 148.981 586.341 150.144 583.369 152.47C580.398 154.666 578.912 157.767 578.912 161.773C578.912 163.969 580.139 166.101 582.594 168.168C585.178 170.106 588.925 171.721 593.835 173.013L604.3 175.533C610.631 177.083 615.864 179.474 619.999 182.704C624.133 185.804 627.234 189.358 629.301 193.363C631.369 197.239 632.402 201.309 632.402 205.573C632.402 211.387 630.787 216.49 627.557 220.883C624.456 225.147 620.128 228.442 614.572 230.767C609.146 233.093 602.944 234.256 595.967 234.256Z" fill="#000000"/>
+<path d="M641.089 231.93V135.027H659.5V231.93H641.089ZM650.391 114.484C647.42 114.484 644.836 113.386 642.639 111.189C640.443 108.864 639.344 106.215 639.344 103.243C639.344 100.142 640.443 97.5582 642.639 95.491C644.836 93.2945 647.42 92.1963 650.391 92.1963C653.492 92.1963 656.076 93.2945 658.144 95.491C660.34 97.5582 661.438 100.142 661.438 103.243C661.438 106.215 660.34 108.864 658.144 111.189C656.076 113.386 653.492 114.484 650.391 114.484Z" fill="#000000"/>
+<path d="M714.974 273.211C708.514 273.211 702.635 272.565 697.338 271.273C692.04 270.11 687.583 268.753 683.965 267.203C680.348 265.652 677.634 264.296 675.825 263.133L682.802 248.21C684.482 249.244 686.872 250.406 689.973 251.698C693.074 253.12 696.692 254.283 700.826 255.187C704.961 256.221 709.548 256.737 714.587 256.737C720.53 256.737 725.827 255.51 730.479 253.055C735.13 250.729 738.748 247.047 741.332 242.008C744.045 236.969 745.402 230.509 745.402 222.628V212.55C742.042 218.235 737.585 222.692 732.029 225.922C726.473 229.023 720.207 230.574 713.23 230.574C704.444 230.574 696.756 228.571 690.167 224.566C683.707 220.431 678.603 214.746 674.856 207.511C671.239 200.146 669.43 191.683 669.43 182.122C669.43 172.173 671.239 163.517 674.856 156.152C678.603 148.788 683.707 143.038 690.167 138.903C696.756 134.769 704.444 132.702 713.23 132.702C720.207 132.702 726.473 134.317 732.029 137.547C737.585 140.648 742.042 145.17 745.402 151.113V135.027H763.813V222.24C763.813 233.352 761.681 242.654 757.418 250.148C753.283 257.771 747.534 263.521 740.169 267.397C732.933 271.273 724.535 273.211 714.974 273.211ZM717.881 215.069C723.308 215.069 728.024 213.648 732.029 210.805C736.034 207.834 739.2 203.893 741.526 198.983C743.851 193.944 745.014 188.195 745.014 181.735C745.014 175.274 743.851 169.589 741.526 164.68C739.2 159.77 735.97 155.958 731.835 153.245C727.83 150.403 723.114 148.981 717.687 148.981C712.002 148.981 706.964 150.403 702.571 153.245C698.307 155.958 694.948 159.77 692.493 164.68C690.038 169.589 688.81 175.274 688.81 181.735C688.81 188.195 690.038 193.944 692.493 198.983C695.077 203.893 698.501 207.834 702.764 210.805C707.157 213.648 712.196 215.069 717.881 215.069Z" fill="#000000"/>
+<path d="M777.732 231.93V135.027H794.981L795.756 149.175C798.986 143.878 803.121 139.808 808.16 136.965C813.328 134.123 819.207 132.702 825.796 132.702C833.419 132.702 840.009 134.252 845.564 137.353C851.249 140.454 855.578 145.299 858.549 151.888C861.65 158.349 863.201 166.876 863.201 177.471V231.93H844.789V182.316C844.789 173.53 843.756 166.876 841.688 162.354C839.75 157.703 836.972 154.473 833.355 152.664C829.866 150.855 825.796 149.886 821.145 149.757C813.263 149.757 807.126 152.534 802.733 158.09C798.34 163.646 796.144 171.463 796.144 181.541V231.93H777.732Z" fill="#000000"/>
+</svg>
+</a>
+ <nav aria-label="Main"><a href="https://www.talksign.co/#products">Products</a><a href="https://www.talksign.co/#models" aria-current="page">Models</a><a href="https://www.talksign.co/marketplace">Marketplace</a><a href="https://www.talksign.co/blog">Insights</a><a href="https://www.talksign.co/about">Company</a></nav>
+ <div class="cta"><a class="pill sec" href="https://www.talksign.co/letter-of-intent">Book a demo</a><a class="pill pri" href="https://www.talksign.co/waitlist">Get early access</a></div>
+</header>
+<main id="main">
+ <section class="hero">
+  <div class="tt"><h1>Talksign Palm</h1></div>
+  <p class="sub">Our sign-to-speech model. Palm reads continuous ASL signing and turns it into English text and speech.</p>
+  <div class="btns"><a class="pill pri" href="mailto:dev@talksign.co?subject=Palm%20API%20access">Request API access</a><a class="pill sec" href="https://www.talksign.co/playground">Try it in the Playground</a></div>
+ </section>
+ <div class="col">
+  <section class="s" aria-labelledby="h-ann"><h2 id="h-ann">Announcements</h2><div class="ann"><article class="card"><div class="meta"><span class="tag new">NEW</span><time datetime="2026-05-22">22 May 2026</time></div><h3>Palm 1.0</h3><p>Palm 1.0 reads whole signed sentences, not single words, and clears the 30% BLEU-4 mark generally treated as production-ready for machine translation.</p><a class="sb" href="https://www.talksign.co/blog/introducing-palm-1-0">Read the launch post<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article><article class="card"><div class="meta"><span class="tag soon">COMING SOON</span></div><h3>Palm 2.0</h3><p>Faster, more accurate sign to speech, with specialist vocabulary.</p><a class="sb" href="https://www.talksign.co/waitlist">Join the waitlist<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article></div></section>
+  <section class="s" aria-labelledby="h-av"><h2 id="h-av">Availability and pricing</h2><p>Palm 1.0 has been available across the Talksign web app and mobile and desktop apps since August 20, 2026. Support for Meta Ray-Ban smart glasses is planned for early 2027.</p><p>A Deaf person signs to a camera, and Palm reads American Sign Language (ASL) and turns it into English, shown as text or spoken aloud. It reads signing in segments of up to about 20 seconds.</p><p>We’re recruiting pilot partners across healthcare, education, Deaf organisations, NGOs, enterprise and airports. To get early access for your organisation, sign our <a href="https://www.talksign.co/letter-of-intent">Letter of Intent</a>.</p><p>In Talksign apps, Palm uses credits from your plan or top-ups: live translation is 10 credits per minute, charged per started minute with a 20-credit minimum per conversation.</p><p>Through the developer API, sign to speech is $0.75 per minute, or $22 per 30-minute session, paid from a prepaid wallet with a $50 minimum top-up and volume discounts. For API access, email <a href="mailto:dev@talksign.co">dev@talksign.co</a>.</p><div class="row"><a class="sb" href="mailto:dev@talksign.co?subject=Palm%20API%20access">Request API access<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+  <section class="s" aria-labelledby="h-uc"><h2 id="h-uc">Use cases</h2><p>Palm lets Deaf people sign and be heard in everyday conversations where an interpreter isn’t there:</p><div class="uses"><div class="uc"><span class="n">01</span><h3>Healthcare</h3><p>Patients sign symptoms and questions at reception, in appointments and at the pharmacy, and staff hear them in English.</p></div><div class="uc"><span class="n">02</span><h3>Education</h3><p>Deaf students sign questions and answers in class, and teachers and classmates hear them straight away.</p></div><div class="uc"><span class="n">03</span><h3>Workplace</h3><p>Deaf colleagues sign in meetings, interviews and one-to-ones, and everyone else hears them in real time.</p></div><div class="uc"><span class="n">04</span><h3>Customer service</h3><p>Customers sign at counters, help desks and kiosks, and staff understand without booking an interpreter.</p></div><div class="uc"><span class="n">05</span><h3>Travel and airports</h3><p>Travellers sign at check-in, security and gates, where an interpreter is rarely there in time.</p></div><div class="uc"><span class="n">06</span><h3>Public services</h3><p>People sign at council offices, job centres and service desks, and get answers in the same conversation.</p></div></div></section>
+  <section class="s" aria-labelledby="h-b"><h2 id="h-b">Benchmarks</h2><p>Palm 1.0 clears the target we set for every core translation measure, including the 30% BLEU-4 mark generally treated as production-ready.</p><div class="meters"><div class="mh"><p class="tb-h"><b>Palm 1.0 against our targets</b> <span>Higher is better</span></p><span class="k"><u></u>Target</span></div><div class="mr"><div><b>ROUGE</b><span>Meaning, in the right order</span></div><div class="bar" role="img" aria-label="ROUGE: 84.2%, target 75%"><i style="width:84.2%"></i><u style="left:75%"></u><em style="left:75%">75%</em></div><span class="val">84.2%</span></div><div class="mr"><div><b>BLEU-1</b><span>The right words</span></div><div class="bar" role="img" aria-label="BLEU-1: 79.6%, target 70%"><i style="width:79.6%"></i><u style="left:70%"></u><em style="left:70%">70%</em></div><span class="val">79.6%</span></div><div class="mr"><div><b>BLEU-4</b><span>Four-word phrases, the strictest</span></div><div class="bar" role="img" aria-label="BLEU-4: 36.6%, target 30%"><i style="width:36.6%"></i><u style="left:30%"></u><em style="left:30%">30%</em></div><span class="val">36.6%</span></div></div><div class="tiles"><p class="tb-h"><b>What Palm sees</b></p><div class="tg"><div class="tl"><span class="v">133</span><span class="h">Landmarks per frame</span><span class="d">Across the hands, face and body</span></div><div class="tl"><span class="v">68</span><span class="h">On the face</span><span class="d">Facial expression is part of the grammar</span></div><div class="tl"><span class="v">42</span><span class="h">On the hands</span><span class="d">21 on each hand</span></div><div class="tl"><span class="v">71K+</span><span class="h">Training samples</span><span class="d">Single signs and continuous sentences</span></div></div></div><p class="note"><b>Known limitations.</b> Palm 1.0 reads ASL only, in segments of up to about 20 seconds. It works from landmarks in two dimensions, so signs that differ mainly in depth are harder to tell apart, and medical, legal and technical signing needs further training.</p><p class="small">These are automatic translation measures. The real test is whether Deaf signers are understood by the people they’re talking to, which is why we test Palm with Deaf users and keep improving it with their feedback.</p></section>
+  <section class="s" aria-labelledby="h-t"><h2 id="h-t">Trust and safety</h2><p>Palm 1.0 was trained on the natural variation of real human signing from diverse signers, not a synthetic approximation, and we keep working with Deaf advocates, linguists and users so Palm improves in the ways that matter most to them. Palm is built for everyday conversations when an interpreter isn’t there; for legal, medical or emergency settings, a qualified interpreter should still be used.</p><div class="row"><a class="sb" href="https://www.talksign.co/blog/introducing-palm-1-0">Read the announcement post<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+  <section class="s" aria-labelledby="h-f"><h2 id="h-f">Frequently asked questions</h2><div><details open><summary><h3>When should I use Palm?</h3><span class="pm" aria-hidden="true"></span></summary><p>Use Palm for everyday conversations where a Deaf person wants to sign and be heard: front desks, classrooms, meetings and counters. For legal, medical or emergency settings, use a qualified interpreter.</p></details><details><summary><h3>Which sign languages does Palm read?</h3><span class="pm" aria-hidden="true"></span></summary><p>American Sign Language (ASL), into English. British Sign Language (BSL) and German Sign Language (DGS) are on the roadmap.</p></details><details><summary><h3>How long can someone sign at once?</h3><span class="pm" aria-hidden="true"></span></summary><p>Palm reads signing in segments of up to about 20 seconds, so very long, uninterrupted passages are handled in parts.</p></details><details><summary><h3>Where can we use it?</h3><span class="pm" aria-hidden="true"></span></summary><p>In the Talksign web, mobile and desktop apps, with smart glasses planned for early 2027. Organisations can join as pilot partners through our Letter of Intent.</p></details><details><summary><h3>How much does it cost to use Palm?</h3><span class="pm" aria-hidden="true"></span></summary><p>In Talksign apps, 10 credits per minute of live translation. Through the API, $0.75 per minute.</p></details></div></section>
+ </div>
+</main>
+<footer>
+ <a href="https://www.talksign.co/" aria-label="Talksign home"><svg height="26" role="img" aria-label="Talksign" viewBox="104 87 764 187" fill="none" >
+<path d="M166.712 192.825C171.365 197.612 165.678 210.686 154.01 222.028C142.342 233.369 129.111 238.683 124.458 233.896C119.805 229.109 125.492 216.035 137.16 204.693C148.828 193.352 162.059 188.038 166.712 192.825Z" fill="#FF5500"/>
+<path d="M163.758 172.26C160.643 178.165 146.451 176.797 132.059 169.204C117.667 161.612 108.525 150.671 111.64 144.767C114.755 138.862 128.947 140.23 143.339 147.823C157.731 155.415 166.873 166.356 163.758 172.26Z" fill="#FF5500"/>
+<path d="M182.409 163.086C175.831 161.948 172.746 148.028 175.519 131.994C178.293 115.96 185.873 103.885 192.451 105.022C199.029 106.16 202.114 120.08 199.34 136.114C196.567 152.148 188.987 164.224 182.409 163.086Z" fill="#FF5500"/>
+<path d="M196.893 177.983C195.942 171.375 208.228 164.14 224.334 161.823C240.44 159.506 254.267 162.984 255.218 169.591C256.168 176.199 243.882 183.434 227.776 185.751C211.67 188.068 197.843 184.59 196.893 177.983Z" fill="#FF5500"/>
+<path d="M187.194 196.467C193.245 193.551 202.601 199.992 208.089 210.853C213.578 221.714 213.122 232.882 207.071 235.797C201.019 238.713 191.664 232.272 186.176 221.411C180.687 210.55 181.143 199.382 187.194 196.467Z" fill="#FF5500"/>
+<path d="M330.827 234.256C321.136 234.256 313.643 231.801 308.345 226.891C303.048 221.852 300.399 214.682 300.399 205.379V150.919H283.926V135.027H300.399V104.794H318.811V135.027H346.331V150.919H318.811V202.666C318.811 207.446 319.974 211.128 322.299 213.713C324.754 216.167 328.243 217.395 332.765 217.395C334.057 217.395 335.478 217.136 337.029 216.62C338.579 216.103 340.452 215.069 342.649 213.519L349.626 227.86C346.267 230.057 343.037 231.672 339.936 232.706C336.964 233.739 333.928 234.256 330.827 234.256Z" fill="#000000"/>
+<path d="M386.426 234.256C374.927 234.256 365.948 231.672 359.487 226.504C353.156 221.206 349.991 213.906 349.991 204.604C349.991 194.655 353.286 187.097 359.875 181.928C366.594 176.631 375.896 173.982 387.783 173.982H413.753C412.978 165.713 410.781 159.512 407.164 155.377C403.675 151.113 398.378 148.981 391.271 148.981C386.233 148.981 381.84 150.015 378.093 152.082C374.475 154.15 371.439 157.38 368.984 161.773L352.704 155.571C355.03 151.178 357.937 147.302 361.425 143.942C364.914 140.454 369.113 137.741 374.023 135.803C378.933 133.735 384.682 132.702 391.271 132.702C400.445 132.702 408.068 134.511 414.141 138.128C420.213 141.746 424.735 146.979 427.707 153.827C430.808 160.674 432.294 169.137 432.165 179.215L431.971 231.93H414.916L414.334 219.527C411.492 224.178 407.745 227.796 403.094 230.38C398.442 232.964 392.887 234.256 386.426 234.256ZM387.977 218.558C393.274 218.558 397.861 217.459 401.737 215.263C405.613 212.937 408.649 209.772 410.846 205.767C413.042 201.632 414.141 196.916 414.141 191.619V188.518H392.822C383.907 188.518 377.64 189.939 374.023 192.782C370.405 195.495 368.596 199.306 368.596 204.216C368.596 208.738 370.276 212.291 373.635 214.875C377.124 217.33 381.904 218.558 387.977 218.558Z" fill="#000000"/>
+<path d="M443.72 231.93V96.2662H462.132V231.93H443.72Z" fill="#000000"/>
+<path d="M476.001 231.93V96.2662H494.413V176.696L533.368 135.027H555.849L519.801 174.37L559.531 231.93H537.437L507.785 187.549L494.413 201.89V231.93H476.001Z" fill="#000000"/>
+<path d="M595.967 234.256C589.119 234.256 582.982 233.222 577.555 231.155C572.258 229.088 567.736 226.31 563.989 222.821C560.371 219.333 557.658 215.392 555.849 210.999L571.741 204.022C573.808 208.028 576.909 211.322 581.044 213.906C585.178 216.49 589.765 217.782 594.804 217.782C600.36 217.782 604.946 216.749 608.564 214.682C612.182 212.614 613.991 209.707 613.991 205.96C613.991 202.343 612.634 199.5 609.921 197.433C607.208 195.366 603.267 193.686 598.099 192.394L588.99 190.068C579.945 187.613 572.904 183.931 567.865 179.021C562.955 174.112 560.5 168.556 560.5 162.354C560.5 152.922 563.537 145.622 569.609 140.454C575.682 135.286 584.661 132.702 596.548 132.702C602.362 132.702 607.66 133.542 612.44 135.221C617.35 136.901 621.485 139.291 624.844 142.392C628.332 145.493 630.787 149.175 632.208 153.439L616.704 160.416C615.154 156.54 612.505 153.697 608.758 151.888C605.011 149.95 600.618 148.981 595.579 148.981C590.411 148.981 586.341 150.144 583.369 152.47C580.398 154.666 578.912 157.767 578.912 161.773C578.912 163.969 580.139 166.101 582.594 168.168C585.178 170.106 588.925 171.721 593.835 173.013L604.3 175.533C610.631 177.083 615.864 179.474 619.999 182.704C624.133 185.804 627.234 189.358 629.301 193.363C631.369 197.239 632.402 201.309 632.402 205.573C632.402 211.387 630.787 216.49 627.557 220.883C624.456 225.147 620.128 228.442 614.572 230.767C609.146 233.093 602.944 234.256 595.967 234.256Z" fill="#000000"/>
+<path d="M641.089 231.93V135.027H659.5V231.93H641.089ZM650.391 114.484C647.42 114.484 644.836 113.386 642.639 111.189C640.443 108.864 639.344 106.215 639.344 103.243C639.344 100.142 640.443 97.5582 642.639 95.491C644.836 93.2945 647.42 92.1963 650.391 92.1963C653.492 92.1963 656.076 93.2945 658.144 95.491C660.34 97.5582 661.438 100.142 661.438 103.243C661.438 106.215 660.34 108.864 658.144 111.189C656.076 113.386 653.492 114.484 650.391 114.484Z" fill="#000000"/>
+<path d="M714.974 273.211C708.514 273.211 702.635 272.565 697.338 271.273C692.04 270.11 687.583 268.753 683.965 267.203C680.348 265.652 677.634 264.296 675.825 263.133L682.802 248.21C684.482 249.244 686.872 250.406 689.973 251.698C693.074 253.12 696.692 254.283 700.826 255.187C704.961 256.221 709.548 256.737 714.587 256.737C720.53 256.737 725.827 255.51 730.479 253.055C735.13 250.729 738.748 247.047 741.332 242.008C744.045 236.969 745.402 230.509 745.402 222.628V212.55C742.042 218.235 737.585 222.692 732.029 225.922C726.473 229.023 720.207 230.574 713.23 230.574C704.444 230.574 696.756 228.571 690.167 224.566C683.707 220.431 678.603 214.746 674.856 207.511C671.239 200.146 669.43 191.683 669.43 182.122C669.43 172.173 671.239 163.517 674.856 156.152C678.603 148.788 683.707 143.038 690.167 138.903C696.756 134.769 704.444 132.702 713.23 132.702C720.207 132.702 726.473 134.317 732.029 137.547C737.585 140.648 742.042 145.17 745.402 151.113V135.027H763.813V222.24C763.813 233.352 761.681 242.654 757.418 250.148C753.283 257.771 747.534 263.521 740.169 267.397C732.933 271.273 724.535 273.211 714.974 273.211ZM717.881 215.069C723.308 215.069 728.024 213.648 732.029 210.805C736.034 207.834 739.2 203.893 741.526 198.983C743.851 193.944 745.014 188.195 745.014 181.735C745.014 175.274 743.851 169.589 741.526 164.68C739.2 159.77 735.97 155.958 731.835 153.245C727.83 150.403 723.114 148.981 717.687 148.981C712.002 148.981 706.964 150.403 702.571 153.245C698.307 155.958 694.948 159.77 692.493 164.68C690.038 169.589 688.81 175.274 688.81 181.735C688.81 188.195 690.038 193.944 692.493 198.983C695.077 203.893 698.501 207.834 702.764 210.805C707.157 213.648 712.196 215.069 717.881 215.069Z" fill="#000000"/>
+<path d="M777.732 231.93V135.027H794.981L795.756 149.175C798.986 143.878 803.121 139.808 808.16 136.965C813.328 134.123 819.207 132.702 825.796 132.702C833.419 132.702 840.009 134.252 845.564 137.353C851.249 140.454 855.578 145.299 858.549 151.888C861.65 158.349 863.201 166.876 863.201 177.471V231.93H844.789V182.316C844.789 173.53 843.756 166.876 841.688 162.354C839.75 157.703 836.972 154.473 833.355 152.664C829.866 150.855 825.796 149.886 821.145 149.757C813.263 149.757 807.126 152.534 802.733 158.09C798.34 163.646 796.144 171.463 796.144 181.541V231.93H777.732Z" fill="#000000"/>
+</svg>
+</a>
+ <nav aria-label="Footer"><a href="https://www.talksign.co/#products">Products</a><a href="https://www.talksign.co/#models">Models</a><a href="https://www.talksign.co/blog">Insights</a><a href="https://www.talksign.co/marketplace">Marketplace</a><a href="https://www.talksign.co/about">About</a><a href="https://www.talksign.co/careers">Careers</a></nav>
+ <small>© 2026 Talksign Ltd. All rights reserved.</small>
+</footer>
+</body>
+</html>
