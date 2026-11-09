@@ -1685,8 +1685,9 @@ html:not(.m) #v-post h1.bp-long{font-size:60px!important;line-height:1.04!import
 html.m #v-post h1.bp-long{font-size:min(36px,8.4vw)!important;line-height:1.08!important}
 html.m #v-post .bp-t{font-size:14px}
 html.m #v-post .bp-t th,html.m #v-post .bp-t td{padding:10px 12px}
-/* Eddy, 9 Nov: model cover grain. Phones keep 150px at 50% (approved); larger screens get a crisper, stronger grain so it reads the same */
-html:not(.m) .mcg:not(#_x),html:not(.m) .bpTr .g:not(#_x){background-size:128px 128px!important;opacity:.75!important}
+/* Eddy, 9 Nov: model cover grain. Phones 150px at 30% (Eddy: less grain on mobile); larger screens 256px at 70%, coarse enough to read on retina */
+html:not(.m) .mcg:not(#_x),html:not(.m) .bpTr .g:not(#_x){background-size:256px 256px!important;opacity:.7!important}
+html.m .mcg:not(#_x),html.m .bpTr .g:not(#_x){opacity:.3!important}
 /* Eddy, 9 Nov: phone type follows the ElevenLabs blog ratios (body 16/28, H2 30/36, H1 36/42, about 30px between paragraphs) */
 html.m body #v-post h1.bpE-h1:not(#_x):not(#_y){font-size:36px!important;line-height:42px!important}
 html.m body #v-post article[style*="gap: 22px"]:not(#_x){gap:28px!important}
