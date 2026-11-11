@@ -12,6 +12,16 @@
       "source": "/blog/palm-and-echo",
       "destination": "/blog/introducing-palm-1-0",
       "permanent": true
+    },
+    {
+      "source": "/models/:slug(echo|palm|morph)",
+      "destination": "/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/models",
+      "destination": "/#models",
+      "permanent": true
     }
   ],
   "headers": [
