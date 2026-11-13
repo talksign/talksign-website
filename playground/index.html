@@ -277,7 +277,7 @@ html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its inp
   <div class="pg-left"><a class="pg-brand" href="/" aria-label="Talksign home"><img src="/assets/75f898565b2d14a77a2e35db33418321.svg" alt="Talksign"><span class="pg-tag">Playground</span></a><button class="pg-chip" id="pgChip" type="button" aria-expanded="false" aria-controls="pgTest">Beta</button><div class="pg-test" id="pgTest" hidden></div></div>
   <div class="pg-seg" role="tablist" aria-label="Mode">
    <button role="tab" aria-selected="true" data-m="0">Speech to sign <small aria-label="3 credits"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>3</small></button>
-   <button role="tab" aria-selected="false" data-m="1">Sign to speech <small aria-label="3 credits"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>3</small></button>
+   <button role="tab" aria-selected="false" data-m="1">Sign to speech <small aria-label="Coming soon">Soon</small></button>
    <button role="tab" aria-selected="false" data-m="2">Video to video <small aria-label="4 credits"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>4</small></button>
   </div>
   <div class="pg-right">
@@ -309,9 +309,9 @@ html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its inp
    </div>
    <div class="pg-foot">
     <div class="pg-menus">
-     <span class="pg-menu">Model <select aria-label="Model"><option>Echo 2.0</option><option>Echo 1.0</option></select></span>
-     <span class="pg-menu">Avatar <select aria-label="Avatar" data-avatar="0"><option value="amara">Amara</option><option value="arthur">Arthur</option><option value="elena">Elena</option></select></span>
-     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option>BSL</option><option>Auslan</option></select></span>
+     <span class="pg-menu">Model <select aria-label="Model"><option>Echo 2.0</option></select></span>
+     <span class="pg-menu">Avatar <select aria-label="Avatar" data-avatar="0"><option value="amara">Amara</option><option value="arthur">Arthur</option><option value="elena" disabled>Elena (coming soon)</option></select></span>
+     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option disabled>BSL (coming soon)</option><option disabled>Auslan (coming soon)</option></select></span>
      <span class="pg-menu">Language <select aria-label="Language"><option>English</option></select></span>
     </div>
     <span class="pg-demo">Want this in your product? <a href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></span>
@@ -345,9 +345,9 @@ html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its inp
    </div>
    <div class="pg-foot">
     <div class="pg-menus">
-     <span class="pg-menu">Model <select aria-label="Model"><option>Palm 2.0</option><option>Palm 1.0</option></select></span>
+     <span class="pg-menu">Model <select aria-label="Model"><option>Palm 2.0 (coming soon)</option></select></span>
      <span class="pg-menu">Voice <select aria-label="Voice" id="pgVoice"><option value="0">Voice 1</option><option value="1">Voice 2</option></select></span>
-     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option>BSL</option><option>Auslan</option></select></span>
+     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option disabled>BSL (coming soon)</option><option disabled>Auslan (coming soon)</option></select></span>
      <span class="pg-menu">Language <select aria-label="Language"><option>English</option></select></span>
     </div>
     <span class="pg-demo">Want this in your product? <a href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></span>
@@ -365,7 +365,7 @@ html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its inp
      </div>
      <div class="pg-bar">
       <button class="pg-ic" type="button" aria-label="Upload a video" data-upload="2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></button>
-      <span class="pg-hint" id="pgUpHint2">Upload or record a video</span>
+      <span class="pg-hint" id="pgUpHint2">Upload a short signing video</span>
       <button class="pg-try" type="button" data-try="2"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg><span>Try for 4 credits</span></button>
      </div>
     </div>
@@ -379,8 +379,8 @@ html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its inp
    <div class="pg-foot">
     <div class="pg-menus">
      <span class="pg-menu">Model <select aria-label="Model"><option>Morph 1.0</option><option disabled>Morph 2.0 (coming soon)</option></select></span>
-     <span class="pg-menu">Avatar <select aria-label="Avatar" data-avatar="2"><option value="amara">Amara</option><option value="arthur">Arthur</option><option value="elena">Elena</option></select></span>
-     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option>BSL</option><option>Auslan</option></select></span>
+     <span class="pg-menu">Avatar <select aria-label="Avatar" data-avatar="2"><option value="amara">Amara</option><option value="arthur">Arthur</option><option value="elena" disabled>Elena (coming soon)</option></select></span>
+     <span class="pg-menu">Sign language <select aria-label="Sign language" data-sl-select><option>ASL</option><option disabled>BSL (coming soon)</option><option disabled>Auslan (coming soon)</option></select></span>
      <span class="pg-menu">Background <select aria-label="Background" id="pgBg"><option value="black">Studio black</option><option value="sky">Sky blue</option><option value="grey">Warm grey</option><option value="orange">Orange tint</option></select></span>
     </div>
     <span class="pg-demo">Want this in your product? <a href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></span>
@@ -401,7 +401,14 @@ html.pg-m1 #ts-ck{right:auto;left:24px!important}  /* Sign to speech has its inp
 'use strict';
 var MODES=[{n:'Speech to sign',m:'Echo',c:3},{n:'Sign to speech',m:'Palm',c:3},{n:'Video to video',m:'Morph',c:4}];
 var FREE=10, KEY='ts_playground_v1';
-var TEST=/[?&]test(=|&|$)/.test(location.search);
+/* Live API. www.talksign.co uses production; previews and localhost use staging.
+   Credits, email checks and limits all live on the server: this page only shows them. */
+var PROD=/^(www\.)?talksign\.co$/.test(location.hostname);
+var API=window.TALKSIGN_PLAYGROUND_API||(PROD?'https://api.talksign.co/api/playground':'https://api-staging.talksign.co/api/playground');
+var APP=PROD?'https://app.talksign.co':'https://app-staging.talksign.co';
+var CFG={enabled:true,free_credits:10,costs:{'speech-to-sign':3,morph:4},max_text_chars:120,morph_max_seconds:5,morph_max_mb:25,turnstile_site_key:null};
+var KEYCOL={arthur:'#E7F2FD',amara:'#FDEDE7'}; /* Echo 2.0 clips are filmed on these colours */
+var echoSeq=0, upFile2=null, pollT=null, morphT=null, tsId=null;
 var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 var COIN='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg>';
 var X='<button class="pg-x" type="button" data-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>';
@@ -410,12 +417,32 @@ var X='<button class="pg-x" type="button" data-close aria-label="Close"><svg wid
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 var S=load(); if(!S.status)S.status='none'; if(typeof S.credits!=='number')S.credits=0;
+/* Older builds kept credits only in the browser: start those visitors fresh. */
+if((S.status==='verified'&&!S.token)||(S.status==='pending'&&!S.claim))S={status:'none',credits:0};
+function api(path,opts){
+  opts=opts||{}; var h={}, body=opts.body;
+  if(S.token)h.Authorization='Bearer '+S.token;
+  if(body&&!(body instanceof FormData)){h['Content-Type']='application/json';body=JSON.stringify(body);}
+  return fetch(API+path,{method:body?'POST':'GET',headers:h,body:body}).then(function(r){
+    return r.json().catch(function(){return {};}).then(function(j){
+      j=j||{}; j.httpStatus=r.status;
+      if(typeof j.credits==='number'&&S.status==='verified'){S.credits=j.credits;save();renderPill();}
+      if((r.status===401||r.status===410)&&S.status==='verified'&&S.token)signedOut(r.status===410);
+      if(!r.ok||j.success===false){var e=new Error(j.message||'Something went wrong. Please try again.');e.data=j;throw e;}
+      return j;
+    });
+  },function(){var e=new Error('We can’t reach Talksign right now. Check your connection and try again.');e.data={};throw e;});
+}
+function signedOut(expired){S={status:'none',credits:0};save();renderPill();toast(expired?'Your free credits have expired.':'Please confirm your email again.');}
+function busy(k,label){var b=$('.pg-try[data-try="'+k+'"]');if(!b)return;
+  if(label){b.dataset.busy='1';b.disabled=true;b.querySelector('span').textContent=label;}
+  else{delete b.dataset.busy;b.disabled=false;renderPill();}}
 var mode=0, pendingTry=null;
 
 /* ---------- header ---------- */
 function renderPill(){
   var p=$('#pgPill'), cta=$('#pgCta');
-  if(S.status!=='verified'){p.dataset.s='free';p.innerHTML=COIN+'<b>10</b><span class="pw"> free credits</span>';p.setAttribute('aria-label','10 free credits');}
+  if(S.status!=='verified'){p.dataset.s='free';p.innerHTML=COIN+'<b>'+FREE+'</b><span class="pw"> free credits</span>';p.setAttribute('aria-label',FREE+' free credits');}
   else if(S.credits<=0){p.dataset.s='out';p.innerHTML=COIN+'<b>0</b><span class="pw"> credits</span>';p.setAttribute('aria-label','0 credits');}
   else{p.dataset.s=S.credits<=3?'free':'ok';var lab=S.credits+(S.credits===1?' credit':' credits')+(S.credits<=3?' left':'');p.innerHTML=COIN+'<b>'+S.credits+'</b><span class="pw">'+lab.slice(String(S.credits).length)+'</span>';p.setAttribute('aria-label',lab);}
   var out=S.status==='verified'&&S.credits<MODES[mode].c;
@@ -423,6 +450,8 @@ function renderPill(){
   else{cta.textContent='Get early access';cta.classList.remove('dark');cta.setAttribute('href','/waitlist');}
   $$('.pg-try').forEach(function(b){var k=+b.dataset.try,c=MODES[k].c;
     var buyNow=false, sp=b.querySelector('span');
+    if(k===1){sp.textContent='Coming soon';b.disabled=true;b.setAttribute('aria-label','Sign to speech is coming soon');return;}
+    if(b.dataset.busy)return;
     sp.innerHTML=buyNow?'Buy credits<span class="tf"> to try</span>':'Try<span class="tf"> for</span> <span class="tc">'+c+'<span class="tf"> credits</span><span class="tm">'+COIN.replace(/16/g,'12')+'</span></span>';
     b.classList.toggle('buy',buyNow);
     b.setAttribute('aria-label',buyNow?'Buy credits to try':'Try for '+c+' credits');});
@@ -453,8 +482,11 @@ function setAvatar(v,name){
   vid.load();
 }
 $$('[data-avatar]').forEach(function(s){s.addEventListener('change',function(){
-  var k=s.dataset.avatar; if(k==='2')kx.clearRect(0,0,960,720); setAvatar($('#pgAv'+k),s.value);
-  if(k==='2')$('[data-avname]').textContent=s.options[s.selectedIndex].text;
+  var k=s.dataset.avatar; if(k==='2')kx.clearRect(0,0,960,720);
+  if(k==='0')resetEcho();
+  if(k==='2')resetMorphOut();
+  setAvatar($('#pgAv'+k),s.value);
+  var nm=$('[data-avname]'); if(k==='2'&&nm)nm.textContent=s.options[s.selectedIndex].text;
 })});
 $$('[data-sl-select]').forEach(function(s){s.addEventListener('change',function(){
   $$('[data-sl-select]').forEach(function(o){o.value=s.value;if(window.__pgfit)window.__pgfit(o)}); $$('[data-sl]').forEach(function(l){l.textContent=s.value});
@@ -473,6 +505,7 @@ function stopAll(){
   timers.forEach(clearInterval);timers=[];
   $$('.pg video').forEach(function(v){if(!v.srcObject){v.pause();}});
   $$('.pg-card').forEach(function(c){c.classList.remove('playing')});
+  echoSeq++;
   try{speechSynthesis.cancel()}catch(e){}
   stopRec();
 }
@@ -501,8 +534,48 @@ $('#pgMic').addEventListener('click',function(){
   try{rec.start()}catch(e){stopRec()}
 });
 function run0(){
-  var t=big.classList.contains('empty')?'':big.textContent.trim(); if(!t){toast('Type or say something first');inp.focus();return false;}
-  play($('#pgAv0'),$('#pgOut0')); return true;
+  var t=big.classList.contains('empty')?'':big.textContent.trim(); if(!t){toast('Type or say something first');inp.focus();return;}
+  if(t.length>CFG.max_text_chars){toast('Keep it under '+CFG.max_text_chars+' characters.');return;}
+  busy(0,'Signing…');
+  api('/speech-to-sign',{body:{text:t,avatar:$('[data-avatar="0"]').value}}).then(function(j){
+    busy(0); playClips(j.clips,j.avatar); toast(MODES[0].c+' credits used · '+S.credits+' left');
+  },function(e){busy(0);toast(e.message);});
+}
+/* Plays the Echo 2.0 clips (in → sign → out for each word) on two stacked videos,
+   so the last frame stays on screen until the next clip has really started. */
+function playClips(clips,avatar){
+  var card=$('#pgOut0'), seq=++echoSeq, segs=[];
+  clips.forEach(function(c){var r=c.speed||1.25;if(c.in_url)segs.push({src:c.in_url,rate:r});segs.push({src:c.url,rate:1});if(c.out_url)segs.push({src:c.out_url,rate:r});});
+  if(!segs.length)return;
+  var a=$('#pgAv0'), b=$('#pgAv0b');
+  if(!b){b=a.cloneNode(false);b.id='pgAv0b';b.setAttribute('aria-hidden','true');a.parentNode.insertBefore(b,a.nextSibling);}
+  [a,b].forEach(function(v){v.pause();v.removeAttribute('poster');v.innerHTML='';v.muted=true;v.preload='auto';v.style.objectFit='contain';v.style.objectPosition='50% 50%';});
+  card.style.background=KEYCOL[avatar]||'';card.classList.add('playing');
+  var bar=card.querySelector('.pg-prog i'), slots=[a,b], cur=0, i=0;
+  function put(v,sg){v.src=sg.src;v.load();}
+  put(a,segs[0]); if(segs[1])put(b,segs[1]);
+  b.style.visibility='hidden'; a.style.zIndex='1'; b.style.zIndex='0';
+  function step(){
+    if(seq!==echoSeq)return;
+    var v=slots[cur], other=slots[1-cur];
+    v.playbackRate=segs[i].rate; v.style.visibility='visible'; v.style.zIndex='1'; other.style.zIndex='0';
+    var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){});
+    var hide=function(){if(seq===echoSeq&&slots[cur]===v)other.style.visibility='hidden';};
+    if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(hide);else setTimeout(hide,60);
+    v.onended=function(){
+      if(seq!==echoSeq)return;
+      i++; if(bar)bar.style.width=(100*i/segs.length)+'%';
+      if(i>=segs.length){card.classList.remove('playing');setTimeout(function(){if(bar)bar.style.width='0';},400);return;}
+      cur=1-cur; step();
+      var nx=i+1; if(segs[nx])setTimeout(function(){if(seq===echoSeq)put(v,segs[nx]);},150);
+    };
+  }
+  step();
+}
+function resetEcho(){
+  echoSeq++; var card=$('#pgOut0'), a=$('#pgAv0'), b=$('#pgAv0b');
+  if(b)b.remove(); card.style.background=''; card.classList.remove('playing');
+  a.style.objectFit='';a.style.objectPosition='';a.style.visibility='';a.style.zIndex='';a.removeAttribute('src');a.playbackRate=1;
 }
 
 /* ---------- mode 1: sign to speech ---------- */
@@ -569,7 +642,49 @@ $('#pgBg').addEventListener('change',function(){
   $('#pgOut2').querySelector('.pg-prog i').style.background=light?'var(--ink)':'';
   if(light){if(kv.readyState<2){kv.preload='auto';kv.load();}else keyFrame();}
 });
-function run2(){play($('#pgSrc2'),$('#pgIn2'));play($('#pgAv2'),$('#pgOut2'));return true;}
+function run2(){
+  var max=CFG.morph_max_seconds;
+  if(!upFile2){toast('Upload a short signing video first ('+max+' seconds or less).');return;}
+  var src=$('#pgSrc2'); if(src.duration&&isFinite(src.duration)&&src.duration>max+0.5){toast('Use a video of '+max+' seconds or less.');return;}
+  var fd=new FormData(); fd.append('avatar',$('[data-avatar="2"]').value); fd.append('video',upFile2,upFile2.name||'video.mp4');
+  busy(2,'Uploading…');
+  api('/morph',{body:fd}).then(function(j){
+    busy(2); S.morph=j.job.id; save(); showMorph(j.job); morphT=setTimeout(pollMorph,20000);
+    openM('<span class="pg-mi" style="background:var(--orange-bg);color:var(--orange-ink)">'+COIN.replace(/16/g,'30')+'</span>'
+     +'<h2 id="pgMoT">We’re making your video</h2><p>This takes about 20 to 40 minutes. We’ll email <b style="color:var(--ink);font-weight:500">'+esc(S.email||'you')+'</b> when it’s ready, so you can close this page. If it fails, your credits come back.</p>'
+     +'<button class="pg-big" type="button" data-close>Got it</button>');
+  },function(e){busy(2);toast(e.message);});
+}
+function morphLabel(t){var l=$('#pgOut2 .pg-lab');if(l)l.textContent=t;}
+function resetMorphOut(){
+  clearTimeout(morphT); var v=$('#pgAv2'), dl=$('#pgDl2'); if(dl)dl.remove();
+  v.loop=false; v.style.objectFit=''; $('#pgBg').disabled=false; $('#pgOut2').style.background='';
+  var l=$('#pgOut2 .pg-lab'); if(l)l.innerHTML='New signer: <span data-avname></span>';
+  var s=$('[data-avatar="2"]'), nm=$('[data-avname]'); if(nm)nm.textContent=s.options[s.selectedIndex].text;
+}
+function showMorph(job){
+  var card=$('#pgOut2'), v=$('#pgAv2');
+  if(job.status==='completed'&&job.output_url){
+    $('#pgBg').value='black'; $('#pgBg').dispatchEvent(new Event('change')); $('#pgBg').disabled=true;
+    v.pause(); v.removeAttribute('poster'); v.innerHTML=''; v.src=job.output_url; v.loop=true; v.style.objectFit='contain'; v.load();
+    var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){});
+    morphLabel('Your Morph video');
+    if(!$('#pgDl2')){var a=document.createElement('a');a.id='pgDl2';a.className='pg-lab';a.textContent='Open video';a.target='_blank';a.rel='noopener';
+      a.style.cssText='left:auto;right:24px;top:24px;position:absolute;z-index:2;text-decoration:underline';card.appendChild(a);}
+    $('#pgDl2').href=job.output_url;
+    S.lastMorph=job.id; delete S.morph; save();
+  } else if(job.status==='failed'||job.status==='cancelled'){
+    delete S.morph; save(); resetMorphOut(); toast('Your video couldn’t be made. Your credits were given back.');
+  } else {
+    morphLabel('Making your video… '+(job.progress||0)+'%');
+  }
+}
+function pollMorph(){
+  clearTimeout(morphT); if(!S.morph||!S.token)return;
+  api('/morph/'+encodeURIComponent(S.morph)).then(function(j){
+    showMorph(j.job); if(j.job.status==='queued'||j.job.status==='processing')morphT=setTimeout(pollMorph,20000);
+  },function(e){if(e.data&&e.data.httpStatus===404){delete S.morph;save();}else morphT=setTimeout(pollMorph,60000);});
+}
 
 /* ---------- uploads ---------- */
 var upTarget=0;
@@ -577,6 +692,10 @@ $$('[data-upload]').forEach(function(b){b.addEventListener('click',function(){up
 $('#pgFile').addEventListener('change',function(){
   var f=this.files&&this.files[0]; if(!f)return;
   if(f.size>100*1024*1024){toast('That video is over 100 MB. Try a shorter one.');return;}
+  if(upTarget===2){
+    if(f.size>CFG.morph_max_mb*1024*1024){toast('That video is too big. Use a clip of '+CFG.morph_max_seconds+' seconds or less.');this.value='';return;}
+    upFile2=f; resetMorphOut();
+  }
   var url=URL.createObjectURL(f), v=upTarget===1?$('#pgCam'):$('#pgSrc2');
   if(upTarget===1){if(camStream){camStream.getTracks().forEach(function(t){t.stop()});camStream=null;}v.srcObject=null;camUI(false,'your video');}
   v.removeAttribute('poster'); v.innerHTML=''; v.src=url; v.load();
@@ -585,18 +704,17 @@ $('#pgFile').addEventListener('change',function(){
 });
 
 /* ---------- Try: credits gate ---------- */
-var RUN=[run0,run1,run2];
+var RUN=[run0,null,run2];
 $$('.pg-try').forEach(function(b){b.addEventListener('click',function(){tryMode(+b.dataset.try)})});
 function tryMode(k){
+  if(k===1){toast('Sign to speech is coming soon.');return;}
+  if(!CFG.enabled){toast('The Playground opens soon. Please check back shortly.');return;}
   if(k===0&&big.classList.contains('empty')){toast('Type or say something first');inp.focus();return;}
   if(S.status==='none'){pendingTry=k;claim();return;}
   if(S.status==='pending'){pendingTry=k;check();return;}
-  var c=MODES[k].c;
-  if(S.credits<c){buy();return;}
-  stopAll();
-  if(RUN[k]()===false)return;
-  S.credits-=c; save(); renderPill();
-  toast(c+' credits used · '+S.credits+' left');
+  if(S.credits<MODES[k].c){buy();return;}
+  var b=$('.pg-try[data-try="'+k+'"]'); if(b&&b.dataset.busy)return;
+  stopAll(); RUN[k]();   /* the server takes the credits; the reply carries the new balance */
 }
 
 /* ---------- modals ---------- */
@@ -605,62 +723,69 @@ function openM(html){lastFocus=document.activeElement;mo.innerHTML=X+html;ov.cla
 function closeM(){ov.classList.remove('on');mo.innerHTML='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
 ov.addEventListener('click',function(e){if(e.target===ov||e.target.closest('[data-close]'))closeM();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('on'))closeM();});
-function costs(){return '<div class="pg-costs">'+MODES.map(function(m){return '<div><span>'+m.n+'</span><span>'+m.c+' credits a try</span></div>'}).join('')+'</div>';}
+function costs(){return '<div class="pg-costs">'+MODES.map(function(m,i){return '<div><span>'+m.n+'</span><span>'+(i===1?'Coming soon':m.c+' credits a try')+'</span></div>'}).join('')+'</div>';}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
 function claim(){
   openM('<span class="pg-mi" style="background:var(--orange-bg);color:var(--orange-ink)">'+COIN.replace(/16/g,'30')+'</span>'
-   +'<h2 id="pgMoT">Get 10 free credits</h2><p>Enter your email and we’ll send you a link. Confirm it to unlock your credits.</p>'+costs()
+   +'<h2 id="pgMoT">Get '+FREE+' free credits</h2><p>Enter your email and we’ll send you a link. Confirm it to unlock your credits.</p>'+costs()
    +'<form id="pgClaim" novalidate style="display:flex;flex-direction:column;gap:14px"><div class="pg-field"><label for="pgEmail">Email</label><input id="pgEmail" type="email" autocomplete="email" required placeholder="you@company.com" value="'+esc(S.email||'')+'"><span class="pg-err" id="pgErr"></span></div>'
+   +'<input id="pgHp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">'
+   +'<div id="pgTs"></div>'
    +'<button class="pg-big" type="submit">Send my link</button></form>'
-   +'<p class="pg-fine">One set of free credits per email. By continuing you agree to our <a href="/legal/terms" style="text-decoration:underline">Terms</a> and <a href="/legal/privacy" style="text-decoration:underline">Privacy Policy</a>.</p>');
+   +'<p class="pg-fine">One set of free credits per email. Credits last '+(CFG.valid_days||7)+' days. By continuing you agree to our <a href="/legal/terms" style="text-decoration:underline">Terms</a> and <a href="/legal/privacy" style="text-decoration:underline">Privacy Policy</a>.</p>');
+  tsMount();
   $('#pgClaim').addEventListener('submit',function(e){
     e.preventDefault(); var em=$('#pgEmail').value.trim();
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('#pgErr').textContent='Enter a valid email address.';$('#pgEmail').focus();return;}
-    var btn=this.querySelector('button');btn.disabled=true;btn.textContent='Sending…';
-    /* One set of free credits per email: the sheet says if this email is already in the Playground tab (Eddy, 6 Nov).
-       If the sheet can't be reached in 8 seconds, carry on rather than block the visitor. */
-    var done=false, form=this;
-    function go(){if(done)return;done=true;S.email=em;S.status='pending';S.sentAt=Date.now();save();renderPill();setTimeout(check,150);}
-    claimCheck({type:'Playground',email:em,page:'/playground'}).then(function(r){
-      if(done)return;
-      if(r&&r.error==='disposable'){done=true;btn.disabled=false;btn.textContent='Send my link';$('#pgErr').textContent='Please use your work or personal email, not a temporary one.';$('#pgEmail').focus();return;}
-      if(r&&r.duplicate){done=true;btn.disabled=false;btn.textContent='Send my link';$('#pgErr').textContent='This email has already been used for free credits. Try a different one.';$('#pgEmail').focus();return;}
-      go();
-    });
-    setTimeout(go,8000);
+    var btn=this.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Sending…';
+    send({type:'Playground',email:em,page:'/playground'}); /* lead sheet, as before (not a gate) */
+    api('/claim',{body:{email:em,website:$('#pgHp').value,turnstile:tsToken()}}).then(function(j){
+      S={status:'pending',credits:0,email:j.email||em,claim:j.claim,sentAt:Date.now()};save();renderPill();startPolling();check();
+    },function(err){btn.disabled=false;btn.textContent='Send my link';$('#pgErr').textContent=err.message;$('#pgEmail').focus();tsReset();});
   });
 }
+/* Optional Cloudflare Turnstile bot check: only when the server gives a site key. */
+function tsMount(){var k=CFG.turnstile_site_key, el=$('#pgTs'); tsId=null; if(!k||!el)return;
+  function r(){try{tsId=window.turnstile.render(el,{sitekey:k});}catch(e){}}
+  if(window.turnstile)r();else{var sc=document.createElement('script');sc.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';sc.async=true;sc.onload=r;document.head.appendChild(sc);}}
+function tsToken(){try{return window.turnstile&&tsId!==null?window.turnstile.getResponse(tsId)||'':''}catch(e){return ''}}
+function tsReset(){try{if(window.turnstile&&tsId!==null)window.turnstile.reset(tsId)}catch(e){}}
 function check(){
   openM('<span class="pg-mi" style="background:var(--fill)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>'
-   +'<h2 id="pgMoT">Check your email</h2><p>We sent a link to <b style="color:var(--ink);font-weight:500">'+esc(S.email||'')+'</b>. Open it on any device to confirm your email and unlock 10 credits. This page updates on its own.</p>'
+   +'<h2 id="pgMoT">Check your email</h2><p>We sent a link to <b style="color:var(--ink);font-weight:500">'+esc(S.email||'')+'</b>. Open it on any device to confirm your email and unlock '+FREE+' credits. This page updates on its own.</p>'
    +'<div class="pg-wait"><span class="pg-spin"></span>Waiting for confirmation</div>'
-   +'<div class="pg-links"><button class="o" type="button" id="pgResend">Resend link</button><button type="button" id="pgOther">Use a different email</button></div>'
-   +(TEST?'<p class="pg-fine" style="color:#6B4E00!important;background:#FFF8E1;border-radius:10px;padding:8px">Test build: the email link isn’t wired yet. <button type="button" id="pgSim" style="text-decoration:underline;color:#6B4E00">Confirm now</button></p>':''));
-  $('#pgResend').addEventListener('click',function(){send({type:'Playground',email:S.email,source:'Playground credits (resend)'});toast('Link sent again');});
-  $('#pgOther').addEventListener('click',function(){S.status='none';save();renderPill();claim();});
-  var sim=$('#pgSim'); if(sim)sim.addEventListener('click',verified);
+   +'<div class="pg-links"><button class="o" type="button" id="pgResend">Resend link</button><button type="button" id="pgOther">Use a different email</button></div>');
+  $('#pgResend').addEventListener('click',function(){api('/resend',{body:{claim:S.claim}}).then(function(){toast('Link sent again');},function(e){toast(e.message);});});
+  $('#pgOther').addEventListener('click',function(){clearTimeout(pollT);S={status:'none',credits:0,email:S.email};save();renderPill();claim();});
+  startPolling();
+}
+/* The page that asked for the link waits for it to be opened (on this or any other device). */
+function startPolling(){
+  clearTimeout(pollT); if(S.status!=='pending'||!S.claim)return;
+  api('/poll',{body:{claim:S.claim}}).then(function(j){if(j.status==='verified')gotGrant(j);else pollT=setTimeout(startPolling,4000);},
+    function(e){if(e.data&&(e.data.httpStatus===404||e.data.httpStatus===410)){S={status:'none',credits:0};save();renderPill();}else pollT=setTimeout(startPolling,10000);});
+}
+function gotGrant(j){
+  clearTimeout(pollT);
+  S={status:'verified',credits:j.credits,email:j.email,token:j.token,expires:j.expires_at,morph:S.morph,lastMorph:S.lastMorph};save();renderPill();verified();
 }
 function verified(){
-  if(S.status!=='verified'){S.status='verified';S.credits=FREE;save();}
   renderPill();
   openM('<span class="pg-mi" style="background:#1F9D55;color:#fff"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>'
-   +'<h2 id="pgMoT">10 credits added</h2><p>Your email is confirmed. That’s enough to try every mode once.</p>'+costs()
+   +'<h2 id="pgMoT">'+S.credits+' credits ready</h2><p>Your email is confirmed. Try speech to sign and video to video.</p>'+costs()
    +'<button class="pg-big" type="button" id="pgStart">Start playing</button>');
   $('#pgStart').addEventListener('click',function(){closeM();if(pendingTry!==null){var k=pendingTry;pendingTry=null;setMode(k);tryMode(k);}});
 }
-/* Out of credits (Eddy, 6 Nov: no top-up screen; point to early access and a demo instead) */
+/* Out of credits: sign up to keep going (or book a demo). */
 function buy(){
   var some=S.credits>0;
   openM('<span class="pg-mi" style="background:var(--orange-bg);color:var(--orange-ink)">'+COIN.replace(/16/g,'30')+'</span>'
    +'<h2 id="pgMoT">'+(some?'Not enough credits':'You’ve used your free credits')+'</h2>'
-   +'<p>'+(some?'You have '+S.credits+' left; '+MODES[mode].n.toLowerCase()+' needs '+MODES[mode].c+'. ':'')+'Thanks for trying Talksign. Get early access to keep building with us, or book a demo to see more.</p>'
-   +'<a class="pg-big" href="/waitlist">Get early access</a>'
-   +'<div class="pg-links"><button type="button" data-close>Maybe later</button><a class="o" style="color:var(--orange-ink);font-weight:500" href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></div>'
-   +(TEST?'<p class="pg-fine" style="color:#6B4E00!important;background:#FFF8E1;border-radius:10px;padding:8px">Test build: <button type="button" id="pgTopTest" style="text-decoration:underline;color:#6B4E00">add 10 test credits</button></p>':''));
-  var tt=$('#pgTopTest'); if(tt)tt.addEventListener('click',function(){S.credits+=10;save();renderPill();closeM();toast('10 test credits added');});
+   +'<p>'+(some?'You have '+S.credits+' left; '+MODES[mode].n.toLowerCase()+' needs '+MODES[mode].c+'. ':'')+'Thanks for trying Talksign. Create your account to keep going, or book a demo to see more.</p>'
+   +'<a class="pg-big" href="'+APP+'/signup">Create your account</a>'
+   +'<div class="pg-links"><a href="'+APP+'/login">Log in</a><a class="o" style="color:var(--orange-ink);font-weight:500" href="https://cal.com/edidiongekong/talksign" target="_blank" rel="noopener">Book a demo</a></div>');
 }
-
 /* ---------- sheet (same endpoint as the site forms) ---------- */
 function send(data){
   var url=window.TALKSIGN_SHEET_ENDPOINT||''; data.website='';
@@ -668,27 +793,30 @@ function send(data){
   try{return fetch(url,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(function(){return true},function(){return true});}catch(e){return Promise.resolve(false);}
 }
 
-/* Same endpoint, but reads the reply so we can tell if the email was already used */
-function claimCheck(data){
-  var url=window.TALKSIGN_SHEET_ENDPOINT||''; data.website=''; try{data.elapsed=String(Math.round(performance.now()));}catch(e){}
-  if(!/^https:\/\/script\.google\.com\//.test(url))return Promise.resolve(null);
-  try{return fetch(url,{method:'POST',body:new URLSearchParams(data)}).then(function(r){return r.json()}).catch(function(){return null});}
-  catch(e){return Promise.resolve(null);}
-}
-
 /* ---------- toast ---------- */
 var tt=null;
 function toast(t){var el=$('#pgToast');el.innerHTML=COIN+esc(t);el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on')},2600);}
 
-/* ---------- confirmation link: /playground?confirmed=1 (and other tabs update on their own) ---------- */
-window.addEventListener('storage',function(e){if(e.key===KEY){var was=S.status;S=load();renderPill();if(was!=='verified'&&S.status==='verified'&&ov.classList.contains('on'))verified();}});
-if(/[?&]confirmed=/.test(location.search)&&S.status!=='verified'){S.status='verified';S.credits=FREE;save();setTimeout(verified,50);}
+/* ---------- other tabs update on their own ---------- */
+window.addEventListener('storage',function(e){if(e.key===KEY){var was=S.status;S=load();renderPill();if(S.status==='verified')clearTimeout(pollT);if(was!=='verified'&&S.status==='verified'&&ov.classList.contains('on'))verified();}});
+/* ---------- links from our emails: ?pgv=<confirm token>, ?pgm=<morph id> ---------- */
+(function(){
+  var qs=new URLSearchParams(location.search), pgv=qs.get('pgv'), pgm=qs.get('pgm');
+  if(pgv||pgm){qs.delete('pgv');qs.delete('pgm');try{history.replaceState(null,'',location.pathname+(qs.toString()?'?'+qs:'')+location.hash)}catch(e){}}
+  if(pgv)api('/verify',{body:{token:pgv}}).then(gotGrant,function(e){toast(e.message);});
+  if(pgm){if(S.token){S.morph=pgm;save();}else toast('Open this link in the browser where you used the Playground.');}
+})();
+api('/config').then(function(j){var c=j.config||{};CFG=Object.assign(CFG,c);FREE=CFG.free_credits;
+  MODES[0].c=CFG.costs['speech-to-sign'];MODES[2].c=CFG.costs.morph;renderPill();},function(){});
+if(S.status==='verified'&&S.token)api('/me').then(function(j){S.credits=j.grant.credits;S.expires=j.grant.expires_at;save();renderPill();},function(){});
+if(S.status==='pending')startPolling();
+if(S.morph){setTimeout(function(){if(location.hash!=='#video-to-video')setMode(2);pollMorph();},0);}
 
 /* ---------- test helper ---------- */
 (function(){var tb=$('#pgTest'),chip=$('#pgChip');
   chip.addEventListener('click',function(e){e.stopPropagation();tb.hidden=!tb.hidden;chip.setAttribute('aria-expanded',String(!tb.hidden));});
   document.addEventListener('click',function(e){if(!tb.hidden&&!tb.contains(e.target)){tb.hidden=true;chip.setAttribute('aria-expanded','false');}});
-  tb.innerHTML='<b>Beta.</b> The Playground is in beta. Outputs are sample clips while we connect the live models. Your credits are saved in this browser.';})();
+  tb.innerHTML='<b>Beta.</b> Speech to sign (Echo 2.0) and video to video (Morph) run on our live models. Sign to speech is coming soon.';})();
 
 /* menus size to the chosen option, not the longest one (e.g. "coming soon") */
 var meas=document.createElement('span');meas.style.cssText='position:fixed;top:0;left:-9999px;visibility:hidden;white-space:pre;font:500 14px Figtree,-apple-system,Arial,sans-serif';document.body.appendChild(meas);
